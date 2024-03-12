@@ -1,5 +1,5 @@
 package org.marcosbrindis.proyectomultidiciplinario;
-
+//Proyecto Multidiciplinario inicado: Marcos Brindis y Osvaldo Ochoa
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
