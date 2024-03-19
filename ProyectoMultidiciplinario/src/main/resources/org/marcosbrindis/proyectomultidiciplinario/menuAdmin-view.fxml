@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.MenuAdminController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f6ffa4" height="104.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <Label layoutX="172.0" layoutY="29.0" text="Bienvenido Que desea realizar?">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#f6ffa4" height="332.0" layoutX="14.0" layoutY="274.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="172.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#f6ffa4" height="332.0" layoutX="207.0" layoutY="274.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="172.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#f6ffa4" height="332.0" layoutX="400.0" layoutY="274.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="172.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#f6ffa4" height="332.0" layoutX="597.0" layoutY="274.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="172.0" />
+      <Button fx:id="ButtomCrearNuevoUsuario" layoutX="37.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCrearNuevoUsuario" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Crear Nuevo Usuario" />
+      <Button fx:id="ButtomModificarUsuarios" layoutX="37.0" layoutY="426.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedModificarUsuario" prefHeight="27.0" prefWidth="128.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Modificar Usuario" />
+      <Button fx:id="ButtomAgregarProducto" layoutX="241.0" layoutY="398.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedAgregarProducto" prefHeight="27.0" prefWidth="120.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Agregar Producto" />
+      <Button fx:id="ButtomModificarProducto" layoutX="241.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedModificarProducto" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Modificar Producto" />
+      <Button fx:id="ButtomVerMenu" layoutX="451.0" layoutY="339.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerMenu" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Ver Menú" />
+      <Button fx:id="ButtomCrearPedido" layoutX="442.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCrearPedido" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Crear Pedido" />
+      <Button fx:id="ButtomCancelarPedido" layoutX="443.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCancelarPedido" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Cancelar Pedido" />
+      <Button fx:id="ButtomVerPedidos" layoutX="443.0" layoutY="484.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerPedidos" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Ver Pedidos" />
+      <Button fx:id="ButtomVentas" layoutX="656.0" layoutY="411.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVentas" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Ventas" />
+   </children>
+</AnchorPane>
