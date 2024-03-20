@@ -16,9 +16,9 @@
          </font>
       </Label>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#f6ffa4" height="332.0" layoutX="297.0" layoutY="272.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="172.0" />
-      <Button fx:id="ButtomVerMenu" layoutX="348.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerMenu" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Ver Menú" />
-      <Button fx:id="ButtomCrearPedido" layoutX="339.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCrearPedido" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Crear Pedido" />
-      <Button fx:id="ButtomCancelarPedido" layoutX="340.0" layoutY="437.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCancelarPedido" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Cancelar Pedido" />
-      <Button fx:id="ButtomVerPedidos" layoutX="340.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerPedidos" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Ver Pedidos" />
+      <Button fx:id="ButtomVerMenuEMP" layoutX="348.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerMenuEMP" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Ver Menú" />
+      <Button fx:id="ButtomCrearPedidoEMP" layoutX="339.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCrearPedidoEMP" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Crear Pedido" />
+      <Button fx:id="ButtomCancelarPedidoEMP" layoutX="340.0" layoutY="437.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCancelarPedidoEMP" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Cancelar Pedido" />
+      <Button fx:id="ButtomVerPedidosEMP" layoutX="340.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerPedidosEMP" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Ver Pedidos" />
    </children>
 </AnchorPane>
