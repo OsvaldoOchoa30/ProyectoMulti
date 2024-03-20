@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 
 <AnchorPane prefHeight="498.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.CrearUsuarioController">
-
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="488.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="393.0" layoutX="14.0" layoutY="79.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="464.0" />
+      <TextField layoutX="149.0" layoutY="125.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
+      <TextField layoutX="149.0" layoutY="211.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
+      <TextField layoutX="147.0" layoutY="291.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
+      <Label layoutX="153.0" layoutY="94.0" text="Ingrese Nombre:">
+         <font>
+            <Font name="Rockwell" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="135.0" layoutY="173.0" text="Ingrese Contraseña:">
+         <font>
+            <Font name="Rockwell" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="110.0" layoutY="260.0" text="Confirme la Contraseña:">
+         <font>
+            <Font name="Rockwell" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="9.0" text="Crear Nuevo Usuario" textFill="WHITE">
+         <font>
+            <Font name="Tahoma Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="51.0" fitWidth="61.0" layoutX="405.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/user.png" />
+         </image>
+      </ImageView>
+      <ComboBox layoutX="168.0" layoutY="337.0" prefWidth="150.0" promptText="Rol del Usuario" />
+      <Button fx:id="ButtomCrear" layoutX="188.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCrear" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Crear">
+         <font>
+            <Font name="Verdana Bold Italic" size="19.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>
