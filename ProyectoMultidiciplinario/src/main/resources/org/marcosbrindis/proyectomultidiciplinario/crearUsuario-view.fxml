@@ -10,7 +10,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="498.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.CrearUsuarioController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="488.0" />
@@ -43,8 +42,8 @@
             <Image url="@img/user.png" />
          </image>
       </ImageView>
-      <ComboBox layoutX="168.0" layoutY="337.0" prefWidth="150.0" promptText="Rol del Usuario" />
-      <Button fx:id="ButtomCrear" layoutX="188.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCrear" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Crear">
+      <ComboBox layoutX="171.0" layoutY="351.0" prefWidth="150.0" promptText="Rol del Usuario" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
+      <Button layoutX="188.0" layoutY="415.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Crear">
          <font>
             <Font name="Verdana Bold Italic" size="19.0" />
          </font>
