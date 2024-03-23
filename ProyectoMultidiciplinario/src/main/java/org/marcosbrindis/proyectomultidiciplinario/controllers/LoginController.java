@@ -1,11 +1,17 @@
 package org.marcosbrindis.proyectomultidiciplinario.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import org.marcosbrindis.proyectomultidiciplinario.App;
+
 
 public class LoginController {
 
@@ -24,8 +30,22 @@ public class LoginController {
     @FXML
     private TextField TextFieldPaswordLogin;
 
+    Stage callSu = new Stage();
+    Stage callAd = new Stage();
+
     @FXML
     void OnMouseClickedButtomLogin(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
+            Scene scene = null;
+            scene = new Scene(fxmlLoader.load());
+            callSu.setTitle("Hello!");
+            callSu.setScene(scene);
+            callSu.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
