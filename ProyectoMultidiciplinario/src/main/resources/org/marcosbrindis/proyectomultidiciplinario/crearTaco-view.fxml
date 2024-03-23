@@ -10,12 +10,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.CrearTacoController">
    <children>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="300.0" layoutX="22.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="768.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
-      <Label layoutX="280.0" layoutY="9.0" text="Agregar Taco" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="9.0" text="Crear Taco" textFill="WHITE">
          <font>
             <Font name="Tahoma Bold" size="36.0" />
          </font>
@@ -25,13 +24,11 @@
             <Image url="@img/user.png" />
          </image>
       </ImageView>
-      <TextField layoutX="206.0" layoutY="116.0" prefHeight="31.0" prefWidth="188.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
       <Label layoutX="97.0" layoutY="114.0" text="Nombre: ">
          <font>
             <Font name="Rockwell" size="25.0" />
          </font>
       </Label>
-      <ComboBox layoutX="442.0" layoutY="116.0" prefHeight="31.0" prefWidth="170.0" promptText="Tipo de Carne" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
       <Label layoutX="97.0" layoutY="166.0" text="Precio: ">
          <font>
             <Font name="Rockwell" size="25.0" />
@@ -42,9 +39,11 @@
             <Font name="Rockwell" size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="185.0" layoutY="166.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="\$" />
-      <TextField layoutX="97.0" layoutY="250.0" prefHeight="74.0" prefWidth="292.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;" />
-      <Button fx:id="ButtomCrear" layoutX="459.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCrear" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Crear">
+      <TextField fx:id="TextFieldNombreTaco" layoutX="206.0" layoutY="116.0" prefHeight="31.0" prefWidth="188.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
+      <TextField fx:id="TextFieldPrecioTaco" layoutX="185.0" layoutY="166.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="\$" />
+      <TextField fx:id="TextFieldDescripcionTaco" layoutX="97.0" layoutY="250.0" prefHeight="74.0" prefWidth="292.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;" />
+      <ComboBox fx:id="ComboBoxTipoCarne" layoutX="442.0" layoutY="116.0" onMouseClicked="#OnMouseClickedComboBoxTipoCarne" prefHeight="31.0" prefWidth="170.0" promptText="Tipo de Carne" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
+      <Button fx:id="ButtomCrearTaco" layoutX="459.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCrearTaco" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Crear">
          <font>
             <Font name="Verdana Bold Italic" size="19.0" />
          </font>

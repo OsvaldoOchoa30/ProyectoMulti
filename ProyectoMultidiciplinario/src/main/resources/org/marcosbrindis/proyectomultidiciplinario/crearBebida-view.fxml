@@ -12,18 +12,16 @@
    <children>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="300.0" layoutX="32.0" layoutY="94.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="768.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutX="10.0" layoutY="10.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
-      <Label layoutX="290.0" layoutY="19.0" text="Agregar Bebida" textFill="WHITE">
+      <Label layoutX="290.0" layoutY="19.0" text="Crear Bebida" textFill="WHITE">
          <font>
             <Font name="Tahoma Bold" size="36.0" />
          </font>
       </Label>
-      <TextField layoutX="216.0" layoutY="126.0" prefHeight="31.0" prefWidth="188.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
       <Label layoutX="107.0" layoutY="124.0" text="Nombre: ">
          <font>
             <Font name="Rockwell" size="25.0" />
          </font>
       </Label>
-      <ComboBox layoutX="452.0" layoutY="126.0" prefHeight="31.0" prefWidth="170.0" promptText="Tipo de Bedida" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
       <Label layoutX="107.0" layoutY="176.0" text="Precio: ">
          <font>
             <Font name="Rockwell" size="25.0" />
@@ -34,13 +32,15 @@
             <Font name="Rockwell" size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="195.0" layoutY="176.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="\$" />
-      <TextField layoutX="107.0" layoutY="260.0" prefHeight="74.0" prefWidth="292.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;" />
-      <Button fx:id="ButtomCrear" layoutX="469.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCrear" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Crear">
+      <TextField fx:id="TextFieldNombreBebida" layoutX="216.0" layoutY="126.0" prefHeight="31.0" prefWidth="188.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
+      <TextField fx:id="TextFieldPrecioBebida" layoutX="195.0" layoutY="176.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="\$" />
+      <TextField fx:id="TextFieldDescripcionBebida" layoutX="107.0" layoutY="260.0" prefHeight="74.0" prefWidth="292.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;" />
+      <ComboBox fx:id="ComboBoxTipoBebida" layoutX="452.0" layoutY="126.0" onMouseClicked="#OnMouseClickedComboBoxTipoBebida" prefHeight="31.0" prefWidth="170.0" promptText="Tipo de Bedida" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
+      <ComboBox fx:id="ComboBoxSizeBebida" layoutX="447.0" layoutY="200.0" onMouseClicked="#OnMouseClickedComboBoxSizeBebida" prefHeight="31.0" prefWidth="170.0" promptText="Tamaño" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
+      <Button fx:id="ButtomCrearBebida" layoutX="469.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCrear" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Crear">
          <font>
             <Font name="Verdana Bold Italic" size="19.0" />
          </font>
       </Button>
-      <ComboBox layoutX="447.0" layoutY="200.0" prefHeight="31.0" prefWidth="170.0" promptText="Tamaño" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
    </children>
 </AnchorPane>
