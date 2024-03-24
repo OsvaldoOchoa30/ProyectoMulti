@@ -1,10 +1,15 @@
 package org.marcosbrindis.proyectomultidiciplinario.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import org.marcosbrindis.proyectomultidiciplinario.App;
 
 public class MenuAdminController {
 
@@ -14,55 +19,52 @@ public class MenuAdminController {
     @FXML
     private URL location;
 
-    @FXML
-    private Button ButtomAgregarProducto;
-
-    @FXML
-    private Button ButtomCancelarPedido;
 
     @FXML
     private Button ButtomCrearNuevoUsuario;
 
     @FXML
-    private Button ButtomCrearPedido;
+    private Button ButtomModificarUsuarios;
+
+    @FXML
+    private Button ButtomAgregarProducto;
 
     @FXML
     private Button ButtomModificarProducto;
 
     @FXML
-    private Button ButtomModificarUsuarios;
-
-    @FXML
-    private Button ButtomVentas;
-
-    @FXML
     private Button ButtomVerMenu;
+
+    @FXML
+    private Button ButtomCrearPedido;
+
+    @FXML
+    private Button ButtomCancelarPedido;
 
     @FXML
     private Button ButtomVerPedidos;
 
     @FXML
-    void OnMouseClickedAgregarProducto(MouseEvent event) {
+    private Button ButtomVentas;
 
-    }
+    Stage callSu = new Stage();
+    Stage callAd = new Stage();
 
-    @FXML
-    void OnMouseClickedCancelarPedido(MouseEvent event) {
 
-    }
 
-    @FXML
-    void OnMouseClickedCrearNuevoUsuario(MouseEvent event) {
-
-    }
 
     @FXML
-    void OnMouseClickedCrearPedido(MouseEvent event) {
-
-    }
-
-    @FXML
-    void OnMouseClickedModificarProducto(MouseEvent event) {
+    void OnMouseClickedCrearNuevoUsuario(MouseEvent event) { //Moverme a la interfaz Crear Usuario
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("crearNuevoUsuario-view.fxml"));
+            Scene scene = null;
+            scene = new Scene(fxmlLoader.load());
+            callSu.setTitle("Crear Nuevo Usuario");
+            callSu.setScene(scene);
+            callSu.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -71,8 +73,23 @@ public class MenuAdminController {
 
     }
 
+
     @FXML
-    void OnMouseClickedVentas(MouseEvent event) {
+    void OnMouseClickedAgregarProducto(MouseEvent event) { //Moverme a la interfaz elegir Producto.
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("elegirProducto-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Agregar Producto.");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void OnMouseClickedModificarProducto(MouseEvent event) {
 
     }
 
@@ -82,10 +99,24 @@ public class MenuAdminController {
     }
 
     @FXML
+    void OnMouseClickedCrearPedido(MouseEvent event) {
+
+    }
+
+    @FXML
+    void OnMouseClickedCancelarPedido(MouseEvent event) {
+
+    }
+
+    @FXML
     void OnMouseClickedVerPedidos(MouseEvent event) {
 
     }
 
+    @FXML
+    void OnMouseClickedVentas(MouseEvent event) {
+
+    }
     @FXML
     void initialize() {
         assert ButtomAgregarProducto != null : "fx:id=\"ButtomAgregarProducto\" was not injected: check your FXML file 'menuAdmin-view.fxml'.";

@@ -1,4 +1,4 @@
 package org.marcosbrindis.proyectomultidiciplinario.controllers;
 
-public class CrearUsuarioController {
+public class CrearNuevoUsuarioController {
 }
