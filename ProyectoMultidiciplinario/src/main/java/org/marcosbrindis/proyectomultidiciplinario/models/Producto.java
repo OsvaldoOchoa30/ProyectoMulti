@@ -16,7 +16,7 @@ public class Producto {
         this.productName = productName;
         this.productDescription = productDescription;
         this.productPrice = productPrice;
-        this.quantity = 1;
+        this.quantity = 0;
     }
 
     public String idcreate(){
@@ -32,6 +32,15 @@ public class Producto {
             id += digit;
         }
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                ", quantity=" + quantity +
+                '}';
     }
 
     public String getProductId() {

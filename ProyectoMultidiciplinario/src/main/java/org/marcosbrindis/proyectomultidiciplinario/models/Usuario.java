@@ -13,11 +13,6 @@ public class Usuario {
         this.rolUser = rolUser;
     }
 
-
-  /* public void obtenerRol(){
-        String [] roles = {"Administrador","empleado"};
-   }*/
-
     public String getNameUser() {
         return nameUser;
     }

@@ -29,5 +29,22 @@ public class Menu {
             }
         }
     }
+    public String viewProduct(Producto producto){
+        String view= "ID: " + producto.getProductId() + "\n"
+                + "Nombre: " + producto.getProductName() + "\n"
+                + "Descripción: " + producto.getProductDescription() + "\n"
+                + "Precio: " + producto.getProductPrice() + "\n"
+                + "Cantidad: " + producto.getQuantity() + "\n";
+
+        if (producto instanceof Taco) {
+            Taco taco = (Taco) producto;
+            view += "Tipo de carne: " + taco.getTypeMeat() + "\n";
+        } else if (producto instanceof Bebida) {
+            Bebida bebida = (Bebida) producto;
+            view += "Tipo de bebida: " + bebida.getTypeDrink() + "\n"
+                    + "Tamaño de bebida: " + bebida.getSizeDrink() + "\n";
+        }
+        return view;
+    }
 
 }
