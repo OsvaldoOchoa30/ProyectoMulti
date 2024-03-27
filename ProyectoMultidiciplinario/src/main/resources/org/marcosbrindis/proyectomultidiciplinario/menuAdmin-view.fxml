@@ -11,7 +11,7 @@
 <AnchorPane prefHeight="515.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.MenuAdminController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="810.0" />
-      <Label layoutX="200.0" layoutY="13.0" text="Menú Administrador" textFill="WHITE">
+      <Label layoutX="262.0" layoutY="13.0" text="Menú Administrador" textFill="WHITE">
          <font>
             <Font name="Tahoma Bold" size="30.0" />
          </font>
@@ -56,14 +56,15 @@
          <font>
             <Font name="Verdana Bold" size="12.0" />
          </font></Button>
-      <ImageView fitHeight="51.0" fitWidth="61.0" layoutX="529.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/user.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="51.0" fitWidth="79.0" layoutX="95.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/usuario-de-perfil.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="ButtomCerrarSesion" layoutX="665.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCerrarSesion" text="Cerrar Sesión" />
+      <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="287.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/listauno.png" />
          </image>
       </ImageView>
    </children>

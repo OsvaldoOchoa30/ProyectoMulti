@@ -1,12 +1,18 @@
 package org.marcosbrindis.proyectomultidiciplinario.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import org.marcosbrindis.proyectomultidiciplinario.App;
 
 public class CrearNuevoUsuarioController {
 
@@ -34,8 +40,24 @@ public class CrearNuevoUsuarioController {
     @FXML
     private TextField TextFieldPasswordNU;
 
+    //CallSu
+    Stage callSu = new Stage();
+
     @FXML
     void OnMouseClickedButtomBackToMenuNU(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
+            Scene scene = null;
+            scene = new Scene(fxmlLoader.load());
+            callSu.setTitle("Crear Nuevo Usuario");
+            callSu.setScene(scene);
+            callSu.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
 
     }
 

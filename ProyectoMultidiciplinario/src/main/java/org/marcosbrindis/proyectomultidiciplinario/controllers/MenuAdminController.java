@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -47,6 +48,9 @@ public class MenuAdminController {
     @FXML
     private Button ButtomVentas;
 
+    @FXML
+    private Button ButtomCerrarSesion;
+
     Stage callSu = new Stage();
     Stage callAd = new Stage();
 
@@ -65,6 +69,9 @@ public class MenuAdminController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
 
     }
 
@@ -80,6 +87,9 @@ public class MenuAdminController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
 
     }
 
@@ -96,6 +106,9 @@ public class MenuAdminController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
@@ -127,10 +140,31 @@ public class MenuAdminController {
     void OnMouseClickedVentas(MouseEvent event) {
 
     }
+
+
+    @FXML
+    void OnMouseClickedButtomCerrarSesion(MouseEvent event) { //Al dar click, me regresa al login, pero apesar que se le agreguen datos no activa el boton.
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login-view.fxml"));
+            Scene scene = null;
+            scene = new Scene(fxmlLoader.load());
+            callSu.setTitle("Crear Nuevo Usuario");
+            callSu.setScene(scene);
+            callSu.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+
+    }
+
     @FXML
     void initialize() {
         assert ButtomAgregarProducto != null : "fx:id=\"ButtomAgregarProducto\" was not injected: check your FXML file 'menuAdmin-view.fxml'.";
         assert ButtomCancelarPedido != null : "fx:id=\"ButtomCancelarPedido\" was not injected: check your FXML file 'menuAdmin-view.fxml'.";
+        assert ButtomCerrarSesion != null : "fx:id=\"ButtomCerrarSesion\" was not injected: check your FXML file 'menuAdmin-view.fxml'.";
         assert ButtomCrearNuevoUsuario != null : "fx:id=\"ButtomCrearNuevoUsuario\" was not injected: check your FXML file 'menuAdmin-view.fxml'.";
         assert ButtomCrearPedido != null : "fx:id=\"ButtomCrearPedido\" was not injected: check your FXML file 'menuAdmin-view.fxml'.";
         assert ButtomModificarProducto != null : "fx:id=\"ButtomModificarProducto\" was not injected: check your FXML file 'menuAdmin-view.fxml'.";
