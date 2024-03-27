@@ -23,17 +23,32 @@ public class ElegirProductoController {
     @FXML
     private Button ButtomBackToMenuElegirProducto;
 
+
     @FXML
     private Button ButtomBebida;
 
 
     @FXML
     private Button ButtomTaco;
+
     //CallSu
     Stage callSu = new Stage();
 
     @FXML
     void OnMouseClickedButtomBackToMenuElegirProducto(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Agregar Producto.");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
 
     }
 
@@ -50,6 +65,9 @@ public class ElegirProductoController {
                 IOException e) {
             throw new RuntimeException(e);
         }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
 
     }
 
@@ -66,6 +84,9 @@ public class ElegirProductoController {
                 IOException e) {
             throw new RuntimeException(e);
         }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
 
 
     }

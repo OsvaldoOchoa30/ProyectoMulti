@@ -12,6 +12,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.CrearTacoController">
    <children>
+      <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/flecha-circulo-izquierda.png" />
+         </image>
+      </ImageView>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="300.0" layoutX="22.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="768.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
       <Label layoutX="280.0" layoutY="9.0" text="Crear Taco" textFill="WHITE">
@@ -48,5 +53,11 @@
             <Font name="Verdana Bold Italic" size="19.0" />
          </font>
       </Button>
+      <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/flecha-circulo-izquierda.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="ButtomBackToElegirProductoTaco" layoutX="4.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomBackToElegirProductoTaco" prefHeight="6.0" prefWidth="16.0" style="-fx-background-color: red;" textFill="TRANSPARENT" />
    </children>
 </AnchorPane>

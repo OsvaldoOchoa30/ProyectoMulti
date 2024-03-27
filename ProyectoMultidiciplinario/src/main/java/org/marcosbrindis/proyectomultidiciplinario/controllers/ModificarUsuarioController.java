@@ -62,7 +62,7 @@ public class ModificarUsuarioController {
     void OnMouseClickedButtomModificarUsuario(MouseEvent event) {
 
     }
-o
+
     @FXML
     void initialize() {
         assert ButtomBacktoMenuMU != null : "fx:id=\"ButtomBacktoMenuMU\" was not injected: check your FXML file 'modificarUsuario-view.fxml'.";
