@@ -10,43 +10,49 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="498.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.CrearNuevoUsuarioController">
+<AnchorPane prefHeight="498.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.CrearNuevoUsuarioController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="488.0" />
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="393.0" layoutX="14.0" layoutY="79.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="464.0" />
-      <TextField layoutX="149.0" layoutY="125.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
-      <TextField layoutX="149.0" layoutY="211.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
-      <TextField layoutX="147.0" layoutY="291.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
-      <Label layoutX="153.0" layoutY="94.0" text="Ingrese Nombre:">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="543.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="393.0" layoutX="40.0" layoutY="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="464.0" />
+      <TextField fx:id="TextFieldNombreNU" layoutX="175.0" layoutY="126.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
+      <TextField fx:id="TextFieldPasswordNU" layoutX="175.0" layoutY="212.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
+      <TextField fx:id="TextFieldPasswordCorrectaNU" layoutX="173.0" layoutY="292.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
+      <Label layoutX="179.0" layoutY="95.0" text="Ingrese Nombre:">
          <font>
             <Font name="Rockwell" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="135.0" layoutY="173.0" text="Ingrese Contraseña:">
+      <Label layoutX="161.0" layoutY="174.0" text="Ingrese Contraseña:">
          <font>
             <Font name="Rockwell" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="110.0" layoutY="260.0" text="Confirme la Contraseña:">
+      <Label layoutX="136.0" layoutY="261.0" text="Confirme la Contraseña:">
          <font>
             <Font name="Rockwell" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="19.0" layoutY="9.0" text="Crear Nuevo Usuario" textFill="WHITE">
+      <Label layoutX="72.0" layoutY="9.0" text="Crear Nuevo Usuario" textFill="WHITE">
          <font>
             <Font name="Tahoma Bold" size="36.0" />
          </font>
       </Label>
-      <ImageView fitHeight="51.0" fitWidth="61.0" layoutX="405.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="51.0" fitWidth="61.0" layoutX="453.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/user.png" />
          </image>
       </ImageView>
-      <ComboBox layoutX="171.0" layoutY="351.0" prefWidth="150.0" promptText="Rol del Usuario" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
-      <Button layoutX="188.0" layoutY="415.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Crear">
+      <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="5.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/flecha-circulo-izquierda.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="ComboBoxRolNU" layoutX="197.0" layoutY="352.0" onMouseClicked="#OnMouseClickedComboBoxRolNU" prefWidth="150.0" promptText="Rol del Usuario" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
+      <Button fx:id="ButtomCrearNU" layoutX="214.0" layoutY="408.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCrearNU" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Crear">
          <font>
             <Font name="Verdana Bold Italic" size="19.0" />
          </font>
       </Button>
+      <Button fx:id="ButtomBackToMenuNU" layoutX="7.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomBackToMenuNU" prefHeight="6.0" prefWidth="16.0" style="-fx-background-color: red;" textFill="TRANSPARENT" />
    </children>
 </AnchorPane>

@@ -70,6 +70,16 @@ public class MenuAdminController {
 
     @FXML
     void OnMouseClickedModificarUsuario(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("modificarUsuario-view.fxml"));
+            Scene scene = null;
+            scene = new Scene(fxmlLoader.load());
+            callSu.setTitle("Crear Nuevo Usuario");
+            callSu.setScene(scene);
+            callSu.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
