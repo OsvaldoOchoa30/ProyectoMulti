@@ -81,7 +81,7 @@ public class MenuAdminController {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("modificarUsuario-view.fxml"));
             Scene scene = null;
             scene = new Scene(fxmlLoader.load());
-            callSu.setTitle("Crear Nuevo Usuario");
+            callSu.setTitle("Modificar Usuario");
             callSu.setScene(scene);
             callSu.show();
         } catch (IOException e) {
@@ -113,6 +113,19 @@ public class MenuAdminController {
 
     @FXML
     void OnMouseClickedModificarProducto(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("modificarProducto-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Modificar Producto.");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
 
     }
 

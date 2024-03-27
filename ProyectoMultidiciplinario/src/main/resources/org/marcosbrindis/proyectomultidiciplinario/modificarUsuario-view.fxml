@@ -12,13 +12,13 @@
 
 <AnchorPane prefHeight="467.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.ModificarUsuarioController">
    <children>
-      <ImageView fitHeight="51.0" fitWidth="24.0" layoutX="47.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="797.0" />
+      <ImageView fitHeight="51.0" fitWidth="24.0" layoutX="2.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/flecha-circulo-izquierda.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="380.0" layoutX="12.0" layoutY="74.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="766.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="778.0" />
       <Label layoutX="242.0" layoutY="9.0" text="Modificar Usuario" textFill="WHITE">
          <font>
             <Font name="Tahoma Bold" size="36.0" />
@@ -52,7 +52,7 @@
             <Font name="Verdana Bold Italic" size="19.0" />
          </font>
       </Button>
-      <Button fx:id="ButtomBacktoMenuMU" layoutX="47.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomBacktoMenuMU" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: red;" />
+      <Button fx:id="ButtomBacktoMenuMU" layoutX="6.0" layoutY="4.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomBacktoMenuMU" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: red;" />
       <ListView fx:id="ListViewListaUsuarios" layoutX="444.0" layoutY="88.0" prefHeight="335.0" prefWidth="314.0" style="-fx-border-color: black;" />
    </children>
 </AnchorPane>

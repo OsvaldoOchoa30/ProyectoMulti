@@ -42,6 +42,6 @@
             <Image url="@img/flecha-circulo-izquierda.png" />
          </image>
       </ImageView>
-      <Button fx:id="ButtomBackToMenuElegirProducto" layoutX="4.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomBackToMenuElegirProducto" prefHeight="6.0" prefWidth="16.0" style="-fx-background-color: red;" textFill="TRANSPARENT" />
+      <Button fx:id="ButtomBackToMenuElegirProducto" layoutX="13.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomBackToMenuElegirProducto" prefHeight="6.0" prefWidth="16.0" style="-fx-background-color: red;" textFill="TRANSPARENT" />
    </children>
 </AnchorPane>
