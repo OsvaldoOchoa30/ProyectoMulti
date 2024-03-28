@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import org.marcosbrindis.proyectomultidiciplinario.models.Taqueria;
 
 public class MenuEmpleadoController {
 
@@ -25,6 +26,7 @@ public class MenuEmpleadoController {
 
     @FXML
     private Button ButtomVerPedidosEMP;
+    private Taqueria taqueria;
 
     @FXML
     void OnMouseClickedCancelarPedidoEMP(MouseEvent event) {
@@ -48,11 +50,9 @@ public class MenuEmpleadoController {
 
     @FXML
     void initialize() {
-        assert ButtomCancelarPedidoEMP != null : "fx:id=\"ButtomCancelarPedidoEMP\" was not injected: check your FXML file 'menuEmpleado-view.fxml'.";
-        assert ButtomCrearPedidoEMP != null : "fx:id=\"ButtomCrearPedidoEMP\" was not injected: check your FXML file 'menuEmpleado-view.fxml'.";
-        assert ButtomVerMenuEMP != null : "fx:id=\"ButtomVerMenuEMP\" was not injected: check your FXML file 'menuEmpleado-view.fxml'.";
-        assert ButtomVerPedidosEMP != null : "fx:id=\"ButtomVerPedidosEMP\" was not injected: check your FXML file 'menuEmpleado-view.fxml'.";
-
+    }
+    public void setTaqueria(Taqueria taqueria){
+        this.taqueria=taqueria;
     }
 
 }

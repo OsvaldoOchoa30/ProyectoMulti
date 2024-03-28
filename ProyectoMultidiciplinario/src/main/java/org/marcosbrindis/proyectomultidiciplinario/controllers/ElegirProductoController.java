@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.marcosbrindis.proyectomultidiciplinario.App;
+import org.marcosbrindis.proyectomultidiciplinario.models.Taqueria;
 
 public class ElegirProductoController {
 
@@ -33,12 +34,15 @@ public class ElegirProductoController {
 
     //CallSu
     Stage callSu = new Stage();
+    private Taqueria taqueria;
 
     @FXML
     void OnMouseClickedButtomBackToMenuElegirProducto(MouseEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
+            MenuAdminController menuAdminController = fxmlLoader.getController();
+            menuAdminController.setTaqueria(taqueria);
             Stage stage = new Stage();
             stage.setTitle("Agregar Producto.");
             stage.setScene(scene);
@@ -58,6 +62,9 @@ public class ElegirProductoController {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("crearBebida-view.fxml"));
             Scene scene = null;
             scene = new Scene(fxmlLoader.load());
+            CrearBebidaController crearBebidaController = fxmlLoader.getController();
+            crearBebidaController.setTaqueria(taqueria);
+            crearBebidaController.initialize();
             callSu.setTitle("Crear Nuevo Usuario");
             callSu.setScene(scene);
             callSu.show();
@@ -77,6 +84,9 @@ public class ElegirProductoController {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("crearTaco-view.fxml"));
             Scene scene = null;
             scene = new Scene(fxmlLoader.load());
+            CrearTacoController crearTacoController = fxmlLoader.getController();
+            crearTacoController.setTaqueria(taqueria);
+            crearTacoController.initialize();
             callSu.setTitle("Crear Nuevo Usuario");
             callSu.setScene(scene);
             callSu.show();
@@ -87,16 +97,13 @@ public class ElegirProductoController {
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
-
-
     }
 
     @FXML
     void initialize() {
-        assert ButtomBackToMenuElegirProducto != null : "fx:id=\"ButtomBackToMenuElegirProducto\" was not injected: check your FXML file 'elegirProducto-view.fxml'.";
-        assert ButtomBebida != null : "fx:id=\"ButtomBebida\" was not injected: check your FXML file 'elegirProducto-view.fxml'.";
-        assert ButtomTaco != null : "fx:id=\"ButtomTaco\" was not injected: check your FXML file 'elegirProducto-view.fxml'.";
-
+    }
+    public void setTaqueria(Taqueria taqueria){
+        this.taqueria=taqueria;
     }
 
 }

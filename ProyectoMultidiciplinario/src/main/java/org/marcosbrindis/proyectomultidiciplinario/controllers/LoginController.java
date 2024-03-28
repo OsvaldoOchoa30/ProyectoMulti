@@ -45,6 +45,8 @@ public class LoginController {
                             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
                             Scene scene = null;
                             scene = new Scene(fxmlLoader.load());
+                            MenuAdminController menuAdminController = fxmlLoader.getController();
+                            menuAdminController.setTaqueria(taqueria);
                             callSu.setTitle("Login!");
                             callSu.setScene(scene);
                             callSu.show();
@@ -59,6 +61,8 @@ public class LoginController {
                             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuEmpleado-view.fxml"));
                             Scene scene = null;
                             scene = new Scene(fxmlLoader.load());
+                            MenuEmpleadoController menuEmpleadoController = fxmlLoader.getController();
+                            menuEmpleadoController.setTaqueria(taqueria);
                             callSu.setTitle("Login!");
                             callSu.setScene(scene);
                             callSu.show();

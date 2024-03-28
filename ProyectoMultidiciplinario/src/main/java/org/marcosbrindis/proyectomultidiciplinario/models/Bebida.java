@@ -4,8 +4,8 @@ public class Bebida extends Producto {
     protected String typeDrink;
     protected String sizeDrink;
 
-    public Bebida(String productName, String productDescription, double productPrice, String typeDrink, String sizeDrink) {
-        super(productName, productDescription, productPrice);
+    public Bebida(String productName, String productDescription, Double productPrice, int quantity, String typeDrink, String sizeDrink) {
+        super(productName, productDescription, productPrice, quantity);
         this.typeDrink = typeDrink;
         this.sizeDrink = sizeDrink;
     }

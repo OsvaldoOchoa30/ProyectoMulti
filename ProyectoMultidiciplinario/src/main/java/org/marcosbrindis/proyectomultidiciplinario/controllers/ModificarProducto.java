@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.marcosbrindis.proyectomultidiciplinario.App;
+import org.marcosbrindis.proyectomultidiciplinario.models.Taqueria;
 
 public class ModificarProducto {
 
@@ -28,12 +29,15 @@ public class ModificarProducto {
 
     @FXML
     private Button ButtomModificarTaco;
+    private Taqueria taqueria;
 
     @FXML
     void OnMouseClickedButtomBackToMenuModificarProducto(MouseEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
+            MenuAdminController menuAdminController = fxmlLoader.getController();
+            menuAdminController.setTaqueria(taqueria);
             Stage stage = new Stage();
             stage.setTitle("Menu del Administrador.");
             stage.setScene(scene);
@@ -57,6 +61,9 @@ public class ModificarProducto {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("modificarTaco-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
+            ModificarTacoController modificarTacoController = fxmlLoader.getController();
+            modificarTacoController.setTaqueria(taqueria);
+            modificarTacoController.initialize();
             Stage stage = new Stage();
             stage.setTitle("Modificar Producto.");
             stage.setScene(scene);
@@ -72,10 +79,10 @@ public class ModificarProducto {
 
     @FXML
     void initialize() {
-        assert ButtomBackToMenuModificarProducto != null : "fx:id=\"ButtomBackToMenuModificarProducto\" was not injected: check your FXML file 'modificarProducto-view.fxml'.";
-        assert ButtomModificarBebida != null : "fx:id=\"ButtomModificarBebida\" was not injected: check your FXML file 'modificarProducto-view.fxml'.";
-        assert ButtomModificarTaco != null : "fx:id=\"ButtomModificarTaco\" was not injected: check your FXML file 'modificarProducto-view.fxml'.";
 
+    }
+    public void setTaqueria(Taqueria taqueria){
+        this.taqueria=taqueria;
     }
 
 }

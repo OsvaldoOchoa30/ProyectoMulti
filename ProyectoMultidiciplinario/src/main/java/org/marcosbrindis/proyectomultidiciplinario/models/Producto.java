@@ -8,18 +8,18 @@ public class Producto {
     private String productId;
     private String productName;
     private String productDescription;
-    private double productPrice;
+    private Double productPrice;
     private int quantity;
 
-    public Producto(String productName, String productDescription, double productPrice) {
-        this.productId = idcreate();
+    public Producto(String productName, String productDescription, Double productPrice, int quantity) {
+        this.productId = idcreate(productName);
         this.productName = productName;
         this.productDescription = productDescription;
         this.productPrice = productPrice;
-        this.quantity = 0;
+        this.quantity = quantity;
     }
 
-    public String idcreate(){
+    public String idcreate(String productName) {
         String prefijo = productName.substring(0, Math.min(productName.length(), 3)).toUpperCase();
         Set<Integer> generated = new HashSet<>();
         Random random = new Random();
@@ -27,17 +27,28 @@ public class Producto {
             int digit = random.nextInt(10);
             generated.add(digit);
         }
-        String id = prefijo;
+        StringBuilder id = new StringBuilder(prefijo);
         for (int digit : generated) {
-            id += digit;
+            id.append(digit);
         }
-        return id;
+        return id.toString();
     }
+
+   /* @Override
+    public String toString() {
+        return "Producto{" +
+                "productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                ", quantity=" + quantity +
+                '}';
+    }*/
 
     @Override
     public String toString() {
         return "Producto{" +
-                "productName='" + productName + '\'' +
+                "productId='" + productId + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productDescription='" + productDescription + '\'' +
                 ", productPrice=" + productPrice +
                 ", quantity=" + quantity +
                 '}';
@@ -67,7 +78,7 @@ public class Producto {
         this.productDescription = productDescription;
     }
 
-    public double getProductPrice() {
+    public Double getProductPrice() {
         return productPrice;
     }
 
@@ -82,4 +93,5 @@ public class Producto {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
 }
