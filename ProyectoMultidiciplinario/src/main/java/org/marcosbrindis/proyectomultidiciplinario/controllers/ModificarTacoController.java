@@ -26,6 +26,9 @@ public class ModificarTacoController {
     private Button ButtomBackToModificarProductoModificarTaco;
 
     @FXML
+    private Button ButtomEliminarTaco;
+
+    @FXML
     private Button ButtomModificarTaco;
 
     @FXML
@@ -64,6 +67,12 @@ public class ModificarTacoController {
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
+
+    }
+
+
+    @FXML
+    void OnMouseClickedButtomEliminarTaco(MouseEvent event) { //Boton para eliminar Taco.
 
     }
 

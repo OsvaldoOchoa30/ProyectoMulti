@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="515.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.MenuAdminController">
+<AnchorPane prefHeight="451.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.MenuAdminController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="810.0" />
       <Label layoutX="262.0" layoutY="13.0" text="Menú Administrador" textFill="WHITE">
@@ -16,15 +16,15 @@
             <Font name="Tahoma Bold" size="30.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="280.0" layoutX="36.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="280.0" layoutX="228.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="280.0" layoutX="416.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="280.0" layoutX="606.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="255.0" layoutX="36.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="255.0" layoutX="228.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="255.0" layoutX="416.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="255.0" layoutX="606.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
       <Button fx:id="ButtomCrearNuevoUsuario" layoutX="42.0" layoutY="248.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCrearNuevoUsuario" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #f6ffa4; -fx-border-color: black;" text="Crear Nuevo Usuario">
          <font>
             <Font name="Verdana Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="ButtomModificarUsuarios" layoutX="42.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedModificarUsuario" prefHeight="27.0" prefWidth="158.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #f6ffa4; -fx-border-color: black;" text="Modificar Usuario">
+      <Button fx:id="ButtomModificarUsuarios" layoutX="41.0" layoutY="301.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedModificarUsuario" prefHeight="27.0" prefWidth="158.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #f6ffa4; -fx-border-color: black;" text="Modificar Usuario">
          <font>
             <Font name="Verdana Bold" size="12.0" />
          </font></Button>
@@ -61,11 +61,31 @@
             <Image url="@img/usuario-de-perfil.png" />
          </image>
       </ImageView>
-      <Button fx:id="ButtomCerrarSesion" layoutX="665.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCerrarSesion" text="Cerrar Sesión" />
+      <Button fx:id="ButtomCerrarSesion" layoutX="682.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCerrarSesion" text="Cerrar Sesión" />
       <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="287.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/listauno.png" />
          </image>
       </ImageView>
+      <Button fx:id="ButtomEliminarUsuario" layoutX="41.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomEliminarUsuario" prefHeight="27.0" prefWidth="158.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #f6ffa4; -fx-border-color: black;" text="Eliminar Usuario">
+         <font>
+            <Font name="Verdana Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="475.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/cuchilleria.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="665.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/mano.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="ButtomCocina" layoutX="612.0" layoutY="417.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCocina" prefHeight="25.0" prefWidth="158.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #f6ffa4; -fx-border-color: black;" text="Cocina">
+         <font>
+            <Font name="Verdana Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

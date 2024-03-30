@@ -53,6 +53,23 @@ public class ModificarProducto {
 
     @FXML
     void OnMouseClickedButtomModificarBebida(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("modificarBebida-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            ModificarBebidaController modificarBebidaController = fxmlLoader.getController();
+            modificarBebidaController.setTaqueria(taqueria);
+            modificarBebidaController.initialize(); //Solo donde existen Listview o datos que quiera mostrar.
+            Stage stage = new Stage();
+            stage.setTitle("Modificar Bebida.");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+
 
     }
 
@@ -65,7 +82,7 @@ public class ModificarProducto {
             modificarTacoController.setTaqueria(taqueria);
             modificarTacoController.initialize();
             Stage stage = new Stage();
-            stage.setTitle("Modificar Producto.");
+            stage.setTitle("Modificar Taco.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

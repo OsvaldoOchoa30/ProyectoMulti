@@ -16,12 +16,17 @@ import org.marcosbrindis.proyectomultidiciplinario.models.Taqueria;
 
 public class MenuAdminController {
 
+    @FXML
+    private Button ButtomCocina;
 
     @FXML
     private Button ButtomCrearNuevoUsuario;
 
     @FXML
     private Button ButtomModificarUsuarios;
+
+    @FXML
+    private Button ButtomEliminarUsuario;
 
     @FXML
     private Button ButtomAgregarProducto;
@@ -50,6 +55,12 @@ public class MenuAdminController {
     Stage callSu = new Stage();
 
     private Taqueria taqueria;
+
+
+    @FXML
+    void OnMouseClickedButtomCocina(MouseEvent event) { //Boton para la interfaz: Cocina
+
+    }
 
 
     @FXML
@@ -90,6 +101,14 @@ public class MenuAdminController {
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
+
+    @FXML
+    void OnMouseClickedButtomEliminarUsuario(MouseEvent event) { //Boton para eliminar Usuario(s).
+
+
+    }
+
+
 
 
     @FXML

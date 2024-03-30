@@ -26,6 +26,12 @@ public class MenuEmpleadoController {
 
     @FXML
     private Button ButtomVerPedidosEMP;
+
+    @FXML
+    private Button ButtonCerrarSesionEMP;
+
+    @FXML
+    private Button ButtonCocinaEMP;
     private Taqueria taqueria;
 
     @FXML
@@ -45,6 +51,16 @@ public class MenuEmpleadoController {
 
     @FXML
     void OnMouseClickedVerPedidosEMP(MouseEvent event) {
+
+    }
+
+    @FXML
+    void OnMouseClickedButtonCerrarSesionEMP(MouseEvent event) {
+
+    }
+
+    @FXML
+    void OnMouseClickedButtonCocinaEMP(MouseEvent event) {
 
     }
 

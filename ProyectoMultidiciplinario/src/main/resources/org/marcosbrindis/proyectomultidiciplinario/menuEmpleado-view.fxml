@@ -6,7 +6,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="720.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.MenuEmpleadoController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f6ffa4" height="104.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
@@ -20,5 +19,7 @@
       <Button fx:id="ButtomCrearPedidoEMP" layoutX="339.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCrearPedidoEMP" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Crear Pedido" />
       <Button fx:id="ButtomCancelarPedidoEMP" layoutX="340.0" layoutY="437.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCancelarPedidoEMP" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Cancelar Pedido" />
       <Button fx:id="ButtomVerPedidosEMP" layoutX="340.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerPedidosEMP" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: EFEFEF; -fx-border-color: black;" text="Ver Pedidos" />
+      <Button fx:id="ButtonCerrarSesionEMP" layoutX="660.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtonCerrarSesionEMP" text="Cerrar Sesion" />
+      <Button fx:id="ButtonCocinaEMP" layoutX="517.0" layoutY="578.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtonCocinaEMP" text="Cocina" />
    </children>
 </AnchorPane>
