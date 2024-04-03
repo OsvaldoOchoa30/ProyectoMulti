@@ -57,13 +57,13 @@ public class Taqueria {
                 actual.setProductName(nuevoNombre);
                 actual.setProductDescription(nuevaDescripcion);
                 actual.setProductPrice(nuevoPrecio);
-            }
-            if (actual instanceof Taco) {
-                ((Taco) actual).setTypeMeat(nuevoTipoCarne);
-            }
-            if (actual instanceof Bebida){
-                ((Bebida) actual).setTypeDrink(nuevoTipoBebida);
-                ((Bebida) actual).setSizeDrink(nuevoTamBebida);
+                if (actual instanceof Taco) {
+                    ((Taco) actual).setTypeMeat(nuevoTipoCarne);
+                }
+                if (actual instanceof Bebida){
+                    ((Bebida) actual).setTypeDrink(nuevoTipoBebida);
+                    ((Bebida) actual).setSizeDrink(nuevoTamBebida);
+                }
             }
         }
     }

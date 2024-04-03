@@ -51,7 +51,7 @@ public class CrearNuevoUsuarioController {
             scene = new Scene(fxmlLoader.load());
             MenuAdminController menuAdminController = fxmlLoader.getController();
             menuAdminController.setTaqueria(taqueria);
-            callSu.setTitle("Crear Nuevo Usuario");
+            callSu.setTitle("Menu!!!");
             callSu.setScene(scene);
             callSu.show();
         } catch (IOException e) {

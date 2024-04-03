@@ -59,7 +59,18 @@ public class MenuAdminController {
 
     @FXML
     void OnMouseClickedButtomCocina(MouseEvent event) { //Boton para la interfaz: Cocina
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("cocina-view.fxml"));
+            Scene scene = null;
+            scene = new Scene(fxmlLoader.load());
+            CocinaController cocinaController = fxmlLoader.getController();
+            cocinaController.setTaqueria(taqueria);
+            callSu.setTitle("Cocina!");
+            callSu.setScene(scene);
+            callSu.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -71,7 +82,7 @@ public class MenuAdminController {
             scene = new Scene(fxmlLoader.load());
             CrearNuevoUsuarioController crearNuevoUsuarioController = fxmlLoader.getController();
             crearNuevoUsuarioController.setTaqueria(taqueria);
-            callSu.setTitle("Crear Nuevo Usuario");
+            callSu.setTitle("Crear Usuario!");
             callSu.setScene(scene);
             callSu.show();
         } catch (IOException e) {
@@ -91,7 +102,7 @@ public class MenuAdminController {
             ModificarUsuarioController modificarUsuarioController = fxmlLoader.getController();
             modificarUsuarioController.setTaqueria(taqueria);
             modificarUsuarioController.initialize();
-            callSu.setTitle("Modificar Usuario");
+            callSu.setTitle("Modificar Usuario!");
             callSu.setScene(scene);
             callSu.show();
         } catch (IOException e) {
@@ -104,8 +115,21 @@ public class MenuAdminController {
 
     @FXML
     void OnMouseClickedButtomEliminarUsuario(MouseEvent event) { //Boton para eliminar Usuario(s).
-
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("eliminarUsuario-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            EliminarUsuarioController eliminarUsuarioController = fxmlLoader.getController();
+            eliminarUsuarioController.setTaqueria(taqueria);
+            eliminarUsuarioController.initialize();
+            callSu.setTitle("Eliminar Usuario!");
+            callSu.setScene(scene);
+            callSu.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
 
@@ -119,7 +143,7 @@ public class MenuAdminController {
             ElegirProductoController elegirProductoController = fxmlLoader.getController();
             elegirProductoController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Agregar Producto.");
+            stage.setTitle("Elegir tipo de Producto.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -152,11 +176,37 @@ public class MenuAdminController {
 
     @FXML
     void OnMouseClickedVerMenu(MouseEvent event) {
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("verMenu-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            VerMenuController verMenuController = fxmlLoader.getController();
+            verMenuController.setTaqueria(taqueria);
+            Stage stage = new Stage();
+            stage.setTitle("Ver Menu!!!.");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     void OnMouseClickedCrearPedido(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("crearPedido-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            CrearPedidoController crearPedidoController = fxmlLoader.getController();
+            crearPedidoController.setTaqueria(taqueria);
+            Stage stage = new Stage();
+            stage.setTitle("Crear Pedido.");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
 
     }
 
@@ -167,12 +217,40 @@ public class MenuAdminController {
 
     @FXML
     void OnMouseClickedVerPedidos(MouseEvent event) {
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("verPedidos-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            VerPedidosController verPedidosController = fxmlLoader.getController();
+            verPedidosController.setTaqueria(taqueria);
+            Stage stage = new Stage();
+            stage.setTitle("pedidos.");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     void OnMouseClickedVentas(MouseEvent event) {
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("verVentas-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            VerVentasController verVentasController = fxmlLoader.getController();
+            verVentasController.setTaqueria(taqueria);
+            Stage stage = new Stage();
+            stage.setTitle("Ventas.");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
 
@@ -184,7 +262,7 @@ public class MenuAdminController {
             LoginController loginController = fxmlLoader.getController();
             loginController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Agregar Producto.");
+            stage.setTitle("Login!.");
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

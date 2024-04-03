@@ -47,7 +47,7 @@ public class LoginController {
                             scene = new Scene(fxmlLoader.load());
                             MenuAdminController menuAdminController = fxmlLoader.getController();
                             menuAdminController.setTaqueria(taqueria);
-                            callSu.setTitle("Login!");
+                            callSu.setTitle("Menu!!!");
                             callSu.setScene(scene);
                             callSu.show();
                         } catch (IOException e) {
@@ -63,7 +63,7 @@ public class LoginController {
                             scene = new Scene(fxmlLoader.load());
                             MenuEmpleadoController menuEmpleadoController = fxmlLoader.getController();
                             menuEmpleadoController.setTaqueria(taqueria);
-                            callSu.setTitle("Login!");
+                            callSu.setTitle("Menu!!!");
                             callSu.setScene(scene);
                             callSu.show();
                         } catch (IOException e) {

@@ -50,7 +50,7 @@ public class ModificarUsuarioController {
             MenuAdminController menuAdminController = fxmlLoader.getController();
             menuAdminController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Agregar Producto.");
+            stage.setTitle("Menu!!!.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

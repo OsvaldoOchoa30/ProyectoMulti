@@ -44,7 +44,7 @@ public class ElegirProductoController {
             MenuAdminController menuAdminController = fxmlLoader.getController();
             menuAdminController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Agregar Producto.");
+            stage.setTitle("Menu!!!");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -65,7 +65,7 @@ public class ElegirProductoController {
             CrearBebidaController crearBebidaController = fxmlLoader.getController();
             crearBebidaController.setTaqueria(taqueria);
             crearBebidaController.initialize();
-            callSu.setTitle("Crear Nuevo Usuario");
+            callSu.setTitle("Bebidas");
             callSu.setScene(scene);
             callSu.show();
         } catch (
@@ -87,7 +87,7 @@ public class ElegirProductoController {
             CrearTacoController crearTacoController = fxmlLoader.getController();
             crearTacoController.setTaqueria(taqueria);
             crearTacoController.initialize();
-            callSu.setTitle("Crear Nuevo Usuario");
+            callSu.setTitle("Tacos");
             callSu.setScene(scene);
             callSu.show();
         } catch (

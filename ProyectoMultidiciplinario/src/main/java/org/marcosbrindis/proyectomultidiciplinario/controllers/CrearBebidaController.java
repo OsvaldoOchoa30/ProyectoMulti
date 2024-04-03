@@ -61,7 +61,7 @@ public class CrearBebidaController {
             ElegirProductoController elegirProductoController = fxmlLoader.getController();
             elegirProductoController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Agregar Producto.");
+            stage.setTitle("Elegir tipo de Producto.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

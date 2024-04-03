@@ -1,9 +1,9 @@
 package org.marcosbrindis.proyectomultidiciplinario.controllers;
 
 import java.io.IOException;
-import java.net.URL;
+
 import java.util.ArrayList;
-import java.util.ResourceBundle;
+import java.util.Optional;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +18,7 @@ import org.marcosbrindis.proyectomultidiciplinario.App;
 import org.marcosbrindis.proyectomultidiciplinario.models.Producto;
 import org.marcosbrindis.proyectomultidiciplinario.models.Taco;
 import org.marcosbrindis.proyectomultidiciplinario.models.Taqueria;
-import org.marcosbrindis.proyectomultidiciplinario.models.Usuario;
+
 
 public class ModificarTacoController {
 
@@ -48,6 +48,7 @@ public class ModificarTacoController {
 
     @FXML
     private TextField TextFieldNombreBuscarTaco;
+
     private Taqueria taqueria;
 
     @FXML
@@ -72,59 +73,100 @@ public class ModificarTacoController {
 
 
     @FXML
-    void OnMouseClickedButtomEliminarTaco(MouseEvent event) { //Boton para eliminar Taco.
-
-    }
-
-    @FXML
-    void OnMouseClickedButtomModificarTaco(MouseEvent event) {
+    void OnMouseClickedButtomEliminarTaco(MouseEvent event) {
         Producto productoSeleccionado = ListViewListaTacos.getSelectionModel().getSelectedItem();
 
-        if (productoSeleccionado != null) {
-            String nuevoNombre = TextFieldNameModificarTaco.getText();
-            String nuevaDescripcion = TextFieldModificarDescripcionTaco.getText();
-            double nuevoPrecio = Double.parseDouble(TextFieldModificarPrecioTaco.getText());
-            String nuevoTipoCarne = ComboBoxModificarTipoCarne.getValue();
-
-            if (productoSeleccionado instanceof Taco) {
-                Taco tacoSeleccionado = (Taco) productoSeleccionado;
-
-                tacoSeleccionado.setProductName(nuevoNombre);
-                tacoSeleccionado.setProductDescription(nuevaDescripcion);
-                tacoSeleccionado.setProductPrice(nuevoPrecio);
-                tacoSeleccionado.setTypeMeat(nuevoTipoCarne);
-
-
-                taqueria.modifyProduct(tacoSeleccionado.getProductId(), nuevoNombre, nuevaDescripcion, nuevoPrecio, nuevoTipoCarne, null, null);
-
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Taco Modificado");
-                alert.setHeaderText(null);
-                alert.setContentText("El taco ha sido modificado correctamente.");
-                alert.showAndWait();
-
-
-                actualizarListaTacos();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("El producto seleccionado no es un taco.");
-                alert.showAndWait();
-            }
-        } else {
+        if (productoSeleccionado == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, selecciona un taco de la lista.");
             alert.showAndWait();
+            return;
+        }
+
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Confirmar Eliminación");
+        confirmAlert.setHeaderText(null);
+        confirmAlert.setContentText("¿Seguro que quieres eliminar este taco?");
+
+        Optional<ButtonType> result = confirmAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            taqueria.removeProduct(productoSeleccionado);
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("Taco Eliminado");
+            successAlert.setHeaderText(null);
+            successAlert.setContentText("El taco ha sido eliminado correctamente.");
+            successAlert.showAndWait();
+            actualizarListaTacos();
+
+        }
+    }
+
+    @FXML
+    void OnMouseClickedButtomModificarTaco(MouseEvent event) {
+        try {
+            Producto productoSeleccionado = ListViewListaTacos.getSelectionModel().getSelectedItem();
+            if (productoSeleccionado == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Por favor, selecciona un taco de la lista.");
+                alert.showAndWait();
+                return;
+            }
+
+            String nuevoNombre = TextFieldNameModificarTaco.getText();
+            String nuevaDescripcion = TextFieldModificarDescripcionTaco.getText();
+            double nuevoPrecio = Double.parseDouble(TextFieldModificarPrecioTaco.getText());
+            String nuevoTipoCarne = ComboBoxModificarTipoCarne.getValue();
+
+            if (nuevoNombre.isEmpty() || nuevaDescripcion.isEmpty() || nuevoTipoCarne == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Por favor, complete todos los campos.");
+                alert.showAndWait();
+                return;
+            }
+            for (Producto producto : taqueria.getMenu()) {
+                if (!producto.equals(productoSeleccionado) && producto.getProductName().equalsIgnoreCase(nuevoNombre)) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("El nombre '" + nuevoNombre + "' ya está siendo utilizado por otro producto.");
+                    alert.showAndWait();
+                    return;
+                }
+            }
+            String idProductoSeleccionado = productoSeleccionado.getProductId();
+
+            taqueria.modifyProduct(idProductoSeleccionado, nuevoNombre, nuevaDescripcion, nuevoPrecio, nuevoTipoCarne, null, null);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Taco Modificado");
+            alert.setHeaderText(null);
+            alert.setContentText("El taco ha sido modificado correctamente.");
+            alert.showAndWait();
+
+            actualizarListaTacos();
+       /*for (Producto producto : taqueria.getMenu()) {
+            if (producto instanceof Taco) {
+                System.out.println(producto.toString() + " - Tipo de carne: " + ((Taco) producto).getTypeMeat());
+            }
+        }*/
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Por favor, ingrese un valor válido para el precio.");
+            alert.showAndWait();
+            return;
         }
     }
 
     @FXML
     void OnMouseClickedComboBoxTipoCarne(MouseEvent event) {
-
     }
 
     @FXML
@@ -136,23 +178,23 @@ public class ModificarTacoController {
             typeMeatCombobox.add("pollo");
             ComboBoxModificarTipoCarne.getItems().addAll(typeMeatCombobox);
         }
+
         if (taqueria != null) {
-            ArrayList<Producto> listUsuario = taqueria.getMenu();
-            ObservableList<Producto> tacoslist = FXCollections.observableArrayList();
             TextFieldNombreBuscarTaco.textProperty().addListener((observable, oldValue, newValue) -> {
                 buscarTacos(newValue);
             });
 
             ListViewListaTacos.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue != null) {
-
                     TextFieldNameModificarTaco.setText(newValue.getProductName());
                     TextFieldModificarDescripcionTaco.setText(newValue.getProductDescription());
                     TextFieldModificarPrecioTaco.setText(String.valueOf(newValue.getProductPrice()));
 
                     if (newValue instanceof Taco) {
-                        Taco taco = (Taco) newValue;
-                        ComboBoxModificarTipoCarne.setValue(taco.getTypeMeat());
+                        String tipoCarne = ((Taco) newValue).getTypeMeat();
+                        ComboBoxModificarTipoCarne.setValue(tipoCarne);
+                    } else {
+                        ComboBoxModificarTipoCarne.getSelectionModel().clearSelection();
                     }
                 }
             });
@@ -205,5 +247,4 @@ public class ModificarTacoController {
             actualizarListaTacos();
         }
     }
-
 }
