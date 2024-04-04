@@ -159,6 +159,14 @@ public class CrearPedidoController {
 
     @FXML
     void OnMouseClickedButtomRealizarPedido(MouseEvent event) {
+        if(ordenApoyo.isEmpty()){
+            Alert warningAlert = new Alert(Alert.AlertType.WARNING);
+            warningAlert.setTitle("Advertencia");
+            warningAlert.setHeaderText(null);
+            warningAlert.setContentText("No hay ningun Producto en el pedido\n no se puede crear el pedido.");
+            warningAlert.showAndWait();
+            return;
+        }
         calcularTotal();
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmAlert.setTitle("Confirmar Pedido");

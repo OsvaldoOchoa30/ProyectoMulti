@@ -7,7 +7,11 @@ public class Venta {
     private ArrayList<Pedido>salesList=new ArrayList<>();
 
     public Venta() {
-        this.salesList = salesList;
+        salesList = new ArrayList<>();
+    }
+
+    public ArrayList<Pedido> getSalesList() {
+        return salesList;
     }
 
     public void agregarVenta(Pedido pedido) {

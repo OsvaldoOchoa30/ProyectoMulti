@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="482.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.VerVentasController">
+<AnchorPane prefHeight="482.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.VerVentasController">
    <children>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="398.0" layoutX="5.0" layoutY="74.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="620.0" />
-      <TableView fx:id="TableViewVentas" layoutX="36.0" layoutY="90.0" prefHeight="284.0" prefWidth="560.0">
+      <TableView fx:id="tableViewVentas" layoutX="36.0" layoutY="90.0" prefHeight="284.0" prefWidth="560.0">
          <columns>
-            <TableColumn fx:id="TableColumnVentasID" prefWidth="34.4000244140625" text="ID" />
-            <TableColumn fx:id="TableColumnVentasFecha" prefWidth="168.79998779296875" text="Fecha" />
-            <TableColumn fx:id="TableColumnVentasConsumibles" prefWidth="172.0" text="Consumibles" />
-            <TableColumn fx:id="TableColumnVentasTotal" prefWidth="93.5999755859375" text="Total" />
-            <TableColumn fx:id="TableColumnVentasEstado" prefWidth="93.5999755859375" text="Estado" />
+            <TableColumn fx:id="tableColumnVentasID" prefWidth="34.4000244140625" text="ID" />
+            <TableColumn fx:id="tableColumnVentasFecha" prefWidth="168.79998779296875" text="Fecha" />
+            <TableColumn fx:id="tableColumnVentasConsumibles" prefWidth="172.0" text="Consumibles" />
+            <TableColumn fx:id="tableColumnVentasTotal" prefWidth="93.5999755859375" text="Total" />
+            <TableColumn fx:id="tableColumnVentasEstado" prefWidth="93.5999755859375" text="Estado" />
          </columns>
       </TableView>
       <Label layoutX="441.0" layoutY="385.0" text="Total Final: " />
       <Label fx:id="LabelTotalFinal" layoutX="384.0" layoutY="412.0" prefHeight="19.0" prefWidth="174.0" style="-fx-border-color: black;" />
-      <Button fx:id="ButtomCancelarVenta" layoutX="27.0" layoutY="409.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCancelarVenta" text="Cancelar Venta" />
+      <Button fx:id="ButtomCancelarVenta" layoutX="36.0" layoutY="409.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCancelarVenta" text="Cancelar Venta" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" layoutY="-2.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="631.0" />
       <Label layoutX="247.0" layoutY="14.0" text="Ventas" textFill="WHITE">
          <font>

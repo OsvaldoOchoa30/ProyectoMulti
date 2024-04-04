@@ -10,6 +10,10 @@ public class Taqueria {
     private ArrayList<Producto> menu = new ArrayList<>();
     private Venta venta;
 
+    public Venta getVenta() {
+        return venta;
+    }
+
     public Taqueria() {
         orderList = new LinkedList<>();
         venta = new Venta();

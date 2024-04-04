@@ -244,6 +244,7 @@ public class MenuAdminController {
             Scene scene = new Scene(fxmlLoader.load());
             VerVentasController verVentasController = fxmlLoader.getController();
             verVentasController.setTaqueria(taqueria);
+            verVentasController.initialize();
             Stage stage = new Stage();
             stage.setTitle("Ventas.");
             stage.setScene(scene);
