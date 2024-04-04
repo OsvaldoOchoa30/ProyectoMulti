@@ -90,7 +90,7 @@ public class CrearTacoController {
                 }
             }
 
-            Taco taco = new Taco(name, descrip, precio, 0, typemeat);
+            Taco taco = new Taco(name, descrip, precio, 1, typemeat);
             taqueria.addProduct(taco);
 
             Alert alert = new Alert(Alert.AlertType.ERROR);

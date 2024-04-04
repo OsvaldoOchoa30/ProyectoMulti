@@ -222,7 +222,7 @@ public class ModificarBebidaController {
         actualizarListaBebidas();
     }
 
-    private void buscarBebida(String nombre) {
+    public void buscarBebida(String nombre) {
         if (taqueria != null && nombre != null && !nombre.isEmpty()) {
             ObservableList<Producto> productosFiltrados = FXCollections.observableArrayList();
             for (Producto producto : taqueria.getMenu()) {
@@ -237,7 +237,7 @@ public class ModificarBebidaController {
         }
     }
 
-    private void actualizarListaBebidas() {
+    public void actualizarListaBebidas() {
         if (taqueria != null) {
             ObservableList<Producto> bebidas = FXCollections.observableArrayList();
 

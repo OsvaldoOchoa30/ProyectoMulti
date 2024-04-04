@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Venta {
     private double granTotal;
-    ArrayList<Pedido>salesList=new ArrayList<>();
+    private ArrayList<Pedido>salesList=new ArrayList<>();
 
     public Venta() {
         this.salesList = salesList;

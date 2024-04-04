@@ -128,7 +128,7 @@ public class EliminarUsuarioController {
         });
     }
 
-    private void actualizarListaUsuarios() {
+    public void actualizarListaUsuarios() {
         if (taqueria != null) {
             ObservableList<Usuario> usuarios = FXCollections.observableArrayList(taqueria.getUserList());
             ListViewListaUsuarios.setItems(usuarios);

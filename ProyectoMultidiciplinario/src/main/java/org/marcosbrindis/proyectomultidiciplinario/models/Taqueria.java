@@ -15,6 +15,18 @@ public class Taqueria {
         venta = new Venta();
     }
 
+    public boolean actualizarEstadoPedido(Pedido pedido, boolean nuevoEstado) {
+        if (orderList.isEmpty() || !pedido.equals(orderList.peek())) {
+            if (orderList.contains(pedido)) {
+                pedido.setStatus(nuevoEstado);
+                return true;
+            }
+        } else {
+            return false;
+        }
+        return false;
+    }
+
     public void agregarPedido(Pedido pedido) {
         orderList.add(pedido);
     }
@@ -84,6 +96,10 @@ public class Taqueria {
                     + "Tamaño de bebida: " + bebida.getSizeDrink() + "\n";
         }
         return view;
+    }
+
+    public void setOrderList(Queue<Pedido> orderList) {
+        this.orderList = orderList;
     }
 
     public ArrayList<Producto> getMenu() {

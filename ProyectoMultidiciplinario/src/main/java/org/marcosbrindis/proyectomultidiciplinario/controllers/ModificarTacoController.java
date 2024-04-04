@@ -201,7 +201,7 @@ public class ModificarTacoController {
         }
         actualizarListaTacos();
     }
-    private void buscarTacos(String nombre) {
+    public void buscarTacos(String nombre) {
         if (taqueria != null && nombre != null && !nombre.isEmpty()) {
             ObservableList<Producto> productosFiltrados = FXCollections.observableArrayList();
             for (Producto producto : taqueria.getMenu()) {
@@ -216,7 +216,7 @@ public class ModificarTacoController {
         }
     }
 
-    private void actualizarListaTacos() {
+    public void actualizarListaTacos() {
         if (taqueria != null) {
             ObservableList<Producto> productos = FXCollections.observableArrayList();
 

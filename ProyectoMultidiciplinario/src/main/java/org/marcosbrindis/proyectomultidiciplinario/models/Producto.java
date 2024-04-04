@@ -34,24 +34,9 @@ public class Producto {
         return id.toString();
     }
 
-   /* @Override
-    public String toString() {
-        return "Producto{" +
-                "productName='" + productName + '\'' +
-                ", productPrice=" + productPrice +
-                ", quantity=" + quantity +
-                '}';
-    }*/
-
     @Override
     public String toString() {
-        return "Producto{" +
-                "productId='" + productId + '\'' +
-                ", productName='" + productName + '\'' +
-                ", productDescription='" + productDescription + '\'' +
-                ", productPrice=" + productPrice +
-                ", quantity=" + quantity +
-                '}';
+        return "-" + productName + "--------->"+ quantity+"\n";
     }
 
     public String getProductId() {
@@ -82,7 +67,7 @@ public class Producto {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(Double productPrice) {
         this.productPrice = productPrice;
     }
 
@@ -93,5 +78,17 @@ public class Producto {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
+    public Double getTotalPrice() {
+        return productPrice * quantity;
+    }
+    public void incrementarCantidad(){
+        this.quantity++;
+    }
+    public void decrementarCantidad(){
+        if (this.quantity > 1) {
+            if (this.quantity > 1) {
+                this.quantity--;
+            }
+        }
+    }
 }

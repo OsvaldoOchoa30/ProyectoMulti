@@ -22,11 +22,6 @@ import org.marcosbrindis.proyectomultidiciplinario.models.Taqueria;
 
 public class CrearBebidaController {
 
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private Button ButtomBackToElegirProductoBebida;
@@ -101,7 +96,7 @@ public class CrearBebidaController {
                 }
             }
 
-            Bebida bebida = new Bebida(name, descrip, precio, 0, typeBeb,sizeBeb);
+            Bebida bebida = new Bebida(name, descrip, precio, 1, typeBeb,sizeBeb);
             taqueria.addProduct(bebida);
 
             Alert alert = new Alert(Alert.AlertType.ERROR);

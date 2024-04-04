@@ -65,6 +65,7 @@ public class MenuAdminController {
             scene = new Scene(fxmlLoader.load());
             CocinaController cocinaController = fxmlLoader.getController();
             cocinaController.setTaqueria(taqueria);
+            cocinaController.initialize();
             callSu.setTitle("Cocina!");
             callSu.setScene(scene);
             callSu.show();
@@ -181,6 +182,7 @@ public class MenuAdminController {
             Scene scene = new Scene(fxmlLoader.load());
             VerMenuController verMenuController = fxmlLoader.getController();
             verMenuController.setTaqueria(taqueria);
+            verMenuController.initialize();
             Stage stage = new Stage();
             stage.setTitle("Ver Menu!!!.");
             stage.setScene(scene);
@@ -222,6 +224,7 @@ public class MenuAdminController {
             Scene scene = new Scene(fxmlLoader.load());
             VerPedidosController verPedidosController = fxmlLoader.getController();
             verPedidosController.setTaqueria(taqueria);
+            verPedidosController.initialize();
             Stage stage = new Stage();
             stage.setTitle("pedidos.");
             stage.setScene(scene);

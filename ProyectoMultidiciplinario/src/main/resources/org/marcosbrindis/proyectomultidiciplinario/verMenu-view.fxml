@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.VerMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.VerMenuController">
    <children>
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="695.0" layoutX="28.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="1189.0" />
       <Label layoutX="551.0" layoutY="106.0" text="Tacos" />
       <Label layoutX="546.0" layoutY="400.0" text="Bebidas" />
-      <TableView fx:id="TableViewTacos" layoutX="252.0" layoutY="144.0" prefHeight="200.0" prefWidth="628.0">
+      <TableView fx:id="tableViewTacos" layoutX="252.0" layoutY="144.0" prefHeight="200.0" prefWidth="628.0">
         <columns>
-          <TableColumn fx:id="TableColumnTacosNombre" prefWidth="163.99998474121094" text="Nombre" />
-          <TableColumn fx:id="TableColumnTacosDescripcion" prefWidth="224.0" text="Descripcion" />
-            <TableColumn fx:id="TableColumnTacosCarne" prefWidth="73.60003662109375" text="Carne" />
-            <TableColumn fx:id="TableColumnTacosPrecio" prefWidth="163.99998474121094" text="Precio" />
+          <TableColumn fx:id="tableColumnTacosNombre" prefWidth="163.99998474121094" text="Nombre" />
+          <TableColumn fx:id="tableColumnTacosDescripcion" prefWidth="224.0" text="Descripcion" />
+            <TableColumn fx:id="tableColumnTacosCarne" prefWidth="73.60003662109375" text="Carne" />
+            <TableColumn fx:id="tableColumnTacosPrecio" prefWidth="163.99998474121094" text="Precio" />
         </columns>
       </TableView>
-      <TableView fx:id="TableViewbebidas" layoutX="247.0" layoutY="425.0" prefHeight="200.0" prefWidth="638.0">
+      <TableView fx:id="tableViewBebidas" layoutX="247.0" layoutY="425.0" prefHeight="200.0" prefWidth="638.0">
          <columns>
-            <TableColumn fx:id="TableColumnBebidasNombre" prefWidth="150.40000915527344" text="Nombre" />
-            <TableColumn fx:id="TableColumnBebidasDescripcion" minWidth="0.0" prefWidth="145.5999755859375" text="Descripcion" />
-            <TableColumn fx:id="TableColumnBebidasSize" minWidth="0.0" prefWidth="111.20001220703125" text="Size" />
-            <TableColumn fx:id="TableColumnBebidasTipo" prefWidth="124.79998779296875" text="Tipo" />
-            <TableColumn fx:id="TableColumnBebidasPrecio" prefWidth="99.99993896484375" text="Precio" />
+            <TableColumn fx:id="tableColumnBebidasNombre" prefWidth="150.40000915527344" text="Nombre" />
+            <TableColumn fx:id="tableColumnBebidasDescripcion" minWidth="0.0" prefWidth="145.5999755859375" text="Descripcion" />
+            <TableColumn fx:id="tableColumnBebidasSize" minWidth="0.0" prefWidth="111.20001220703125" text="Size" />
+            <TableColumn fx:id="tableColumnBebidasTipo" prefWidth="124.79998779296875" text="Tipo" />
+            <TableColumn fx:id="tableColumnBebidasPrecio" prefWidth="99.99993896484375" text="Precio" />
          </columns>
       </TableView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#515151" height="65.0" layoutX="-1.0" stroke="#6b6b6b" strokeType="INSIDE" strokeWidth="0.0" width="1248.0" />

@@ -15,20 +15,20 @@
    <children>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="473.0" layoutX="18.0" layoutY="74.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="1017.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#515151" height="65.0" stroke="#6b6b6b" strokeType="INSIDE" strokeWidth="0.0" width="1053.0" />
-      <TableView fx:id="TableViewCrearPedido" layoutX="66.0" layoutY="114.0" prefHeight="274.0" prefWidth="450.0">
+      <TableView fx:id="tableViewCrearPedido" layoutX="66.0" layoutY="114.0" prefHeight="274.0" prefWidth="450.0">
          <columns>
-            <TableColumn fx:id="TableColumnCrearPedidoID" minWidth="8.00006103515625" prefWidth="33.5999755859375" text="ID" />
-            <TableColumn fx:id="TableColumnCrearPedidoProducto" prefWidth="174.4000244140625" text="Producto" />
-            <TableColumn fx:id="TableColumnCrearPedidoPrecio" prefWidth="58.39997863769531" text="Precio" />
-            <TableColumn fx:id="TableColumnCrearPedidoCantidad" prefWidth="69.60003662109375" text="Cantidad" />
-            <TableColumn fx:id="TableColumnCrearPedidoTotal" minWidth="8.00006103515625" prefWidth="116.79998779296875" text="Total" />
+            <TableColumn fx:id="tableColumnCrearPedidoID" minWidth="8.00006103515625" prefWidth="33.5999755859375" text="ID" />
+            <TableColumn fx:id="tableColumnCrearPedidoProducto" prefWidth="174.4000244140625" text="Producto" />
+            <TableColumn fx:id="tableColumnCrearPedidoPrecio" prefWidth="58.39997863769531" text="Precio" />
+            <TableColumn fx:id="tableColumnCrearPedidoCantidad" prefWidth="69.60003662109375" text="Cantidad" />
+            <TableColumn fx:id="tableColumnCrearPedidoTotal" minWidth="8.00006103515625" prefWidth="116.79998779296875" text="Total" />
          </columns>
       </TableView>
-      <TableView fx:id="TableViewAgregarProducto" layoutX="596.0" layoutY="121.0" prefHeight="388.0" prefWidth="388.0">
+      <TableView fx:id="tableViewAgregarProducto" layoutX="596.0" layoutY="121.0" prefHeight="388.0" prefWidth="388.0">
         <columns>
-          <TableColumn fx:id="TableColumnAgregarProductoID" minWidth="8.00006103515625" prefWidth="57.60003662109375" text="ID" />
-          <TableColumn fx:id="TableColumnAgregarProductoNombre" prefWidth="228.0" text="Nombre" />
-            <TableColumn fx:id="TableColumnAgregarProductoPrecio" minWidth="6.4000244140625" prefWidth="100.800048828125" text="Precio" />
+          <TableColumn fx:id="tableColumnAgregarProductoID" minWidth="8.00006103515625" prefWidth="57.60003662109375" text="ID" />
+          <TableColumn fx:id="tableColumnAgregarProductoNombre" prefWidth="228.0" text="Nombre" />
+            <TableColumn fx:id="tableColumnAgregarProductoPrecio" minWidth="6.4000244140625" prefWidth="100.800048828125" text="Precio" />
         </columns>
       </TableView>
       <Button fx:id="ButtomIncrementar" layoutX="72.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomIncrementar" text="+" />
