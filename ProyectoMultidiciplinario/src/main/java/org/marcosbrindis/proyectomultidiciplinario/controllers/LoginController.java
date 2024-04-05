@@ -40,6 +40,8 @@ public class LoginController {
             if (clonUsuarios.containsKey(userName)) {
                 Usuario usuario = clonUsuarios.get(userName);
                 if (userPassword.equals(usuario.getPassword())) {
+                    taqueria.setUsuarioActual(usuario);
+                    System.out.println("Usuario actual: " + usuario.getNameUser() + ", Rol: " + usuario.getRolUser());
                     if (usuario.getRolUser().equals("Administrador")){
                         try {
                             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));

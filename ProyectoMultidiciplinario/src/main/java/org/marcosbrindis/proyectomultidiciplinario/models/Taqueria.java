@@ -9,6 +9,15 @@ public class Taqueria {
     private ArrayList<Usuario>userList=new ArrayList<>();
     private ArrayList<Producto> menu = new ArrayList<>();
     private Venta venta;
+    private Usuario usuarioActual;
+
+    public Usuario getUsuarioActual() {
+        return usuarioActual;
+    }
+
+    public void setUsuarioActual(Usuario usuarioActual) {
+        this.usuarioActual = usuarioActual;
+    }
 
     public Venta getVenta() {
         return venta;

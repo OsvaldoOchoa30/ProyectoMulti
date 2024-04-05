@@ -44,6 +44,7 @@ public class PrincipalController {
                 Usuario usuario = new Usuario(name, password1, rol);
                 taqueria = new Taqueria();
                 taqueria.addUser(usuario);
+                taqueria.setUsuarioActual(usuario);
 
                 //Comando para "conectar" interfaces:
                 try {

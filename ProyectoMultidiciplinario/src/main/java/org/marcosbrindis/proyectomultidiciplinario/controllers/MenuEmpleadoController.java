@@ -128,6 +128,7 @@ public class MenuEmpleadoController {
             scene = new Scene(fxmlLoader.load());
             CocinaController cocinaController = fxmlLoader.getController();
             cocinaController.setTaqueria(taqueria);
+            cocinaController.initialize();
             callSu.setTitle("Cocina!");
             callSu.setScene(scene);
             callSu.show();

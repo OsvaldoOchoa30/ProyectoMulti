@@ -81,21 +81,39 @@ public class CrearPedidoController {
 
     @FXML
     void OnMouseClickedButtomBackToMenuCrearPedido(MouseEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            MenuAdminController menuAdminController = fxmlLoader.getController();
-            menuAdminController.setTaqueria(taqueria);
-            Stage stage = new Stage();
-            stage.setTitle("Menu!!!");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+       if(taqueria.getUsuarioActual().getRolUser().equals("Administrador")) {
+           try {
+               FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
+               Scene scene = new Scene(fxmlLoader.load());
+               MenuAdminController menuAdminController = fxmlLoader.getController();
+               menuAdminController.setTaqueria(taqueria);
+               Stage stage = new Stage();
+               stage.setTitle("Menu!!!");
+               stage.setScene(scene);
+               stage.show();
+           } catch (IOException e) {
+               throw new RuntimeException(e);
+           }
+           Node source = (Node) event.getSource();
+           Stage stage = (Stage) source.getScene().getWindow();
+           stage.close();
+       }else {
+           try {
+               FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuEmpleado-view.fxml"));
+               Scene scene = new Scene(fxmlLoader.load());
+               MenuEmpleadoController menuEmpleadoController = fxmlLoader.getController();
+               menuEmpleadoController.setTaqueria(taqueria);
+               Stage stage = new Stage();
+               stage.setTitle("Menu!!!");
+               stage.setScene(scene);
+               stage.show();
+           } catch (IOException e) {
+               throw new RuntimeException(e);
+           }
+           Node source = (Node) event.getSource();
+           Stage stage = (Stage) source.getScene().getWindow();
+           stage.close();
+       }
     }
 
     @FXML
