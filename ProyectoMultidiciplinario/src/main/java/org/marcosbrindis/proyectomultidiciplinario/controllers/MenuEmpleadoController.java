@@ -22,8 +22,6 @@ public class MenuEmpleadoController {
     @FXML
     private URL location;
 
-    @FXML
-    private Button ButtomCancelarPedidoEMP;
 
     @FXML
     private Button ButtomCrearPedidoEMP;
@@ -41,10 +39,6 @@ public class MenuEmpleadoController {
     private Button ButtonCocinaEMP;
     private Taqueria taqueria;
 
-    @FXML
-    void OnMouseClickedCancelarPedidoEMP(MouseEvent event) {
-
-    }
 
     @FXML
     void OnMouseClickedCrearPedidoEMP(MouseEvent event) {

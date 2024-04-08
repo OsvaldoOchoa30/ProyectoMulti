@@ -1,71 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="477.0" prefWidth="808.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.ModificarTacoController">
+<AnchorPane prefHeight="422.0" prefWidth="928.0" style="-fx-background-color: #1B1B1B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.ModificarTacoController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="66.0" layoutX="-1.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="808.0" />
-      <ImageView fitHeight="51.0" fitWidth="24.0" layoutX="12.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/flecha-circulo-izquierda.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="564.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="158.0" fitWidth="158.0" layoutX="402.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/lista.png" />
+            <Image url="@img/taco.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="377.0" layoutX="22.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="766.0" />
-      <Label layoutX="283.0" layoutY="15.0" text="Modificar Taco" textFill="WHITE">
+      <Button fx:id="ButtomBackToModificarProductoModificarTaco" layoutX="12.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomBackToModificarProductoModificarTaco" prefHeight="26.0" prefWidth="24.0" style="-fx-background-color: transparent;" textFill="TRANSPARENT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="ButtomModificarTaco" layoutX="315.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomModificarTaco" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: #FFA31A; -fx-border-radius: 16; -fx-background-radius: 16;" text="Modificar">
          <font>
-            <Font name="Tahoma Bold" size="36.0" />
+            <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
-      </Label>
-      <Label layoutX="30.0" layoutY="98.0" text="Taco a Modificar:">
-         <font>
-            <Font name="Rockwell" size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="30.0" layoutY="154.0" text="Nombre:">
-         <font>
-            <Font name="Rockwell" size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="30.0" layoutY="210.0" text="Precio:">
-         <font>
-            <Font name="Rockwell" size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="30.0" layoutY="266.0" text="Descripcion:">
-         <font>
-            <Font name="Rockwell" size="25.0" />
-         </font>
-      </Label>
-      <Button fx:id="ButtomBackToModificarProductoModificarTaco" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomBackToModificarProductoModificarTaco" prefHeight="6.0" prefWidth="16.0" style="-fx-background-color: red;" textFill="TRANSPARENT" />
-      <Button fx:id="ButtomModificarTaco" layoutX="66.0" layoutY="404.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomModificarTaco" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #F2DC6D; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Modificar">
-         <font>
-            <Font name="Verdana Bold Italic" size="19.0" />
-         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <TextField fx:id="TextFieldNombreBuscarTaco" layoutX="234.0" layoutY="103.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
-      <TextField fx:id="TextFieldNameModificarTaco" layoutX="137.0" layoutY="157.0" prefHeight="27.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
-      <TextField fx:id="TextFieldModificarPrecioTaco" layoutX="120.0" layoutY="213.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="\$" />
-      <TextField fx:id="TextFieldModificarDescripcionTaco" layoutX="31.0" layoutY="310.0" prefHeight="65.0" prefWidth="251.0" style="-fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" />
-      <ComboBox fx:id="ComboBoxModificarTipoCarne" layoutX="268.0" layoutY="210.0" onMouseClicked="#OnMouseClickedComboBoxTipoCarne" prefHeight="31.0" prefWidth="170.0" promptText="Tipo de Carne" style="-fx-border-color: 20; -fx-border-radius: 20; -fx-background-color: white; -fx-border-color: black;" />
-      <ListView fx:id="ListViewListaTacos" layoutX="454.0" layoutY="98.0" prefHeight="336.0" prefWidth="314.0" style="-fx-border-color: black;" />
-      <Button fx:id="ButtomEliminarTaco" layoutX="289.0" layoutY="404.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomEliminarTaco" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #ff8585; -fx-border-color: black; -fx-border-radius: 40; -fx-background-radius: 40;" text="Eliminar">
+      <TextField fx:id="TextFieldNombreBuscarTaco" layoutX="690.0" layoutY="98.0" prefHeight="38.0" prefWidth="224.0" promptText="Taco a Buscar" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;" />
+      <TextField fx:id="TextFieldNameModificarTaco" layoutX="22.0" layoutY="176.0" prefHeight="48.0" prefWidth="280.0" promptText="Nombre" style="-fx-background-color: #808080; -fx-text-fill: white; -fx-border-radius: 16; -fx-background-radius: 16;">
          <font>
-            <Font name="Verdana Bold Italic" size="19.0" />
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="TextFieldModificarPrecioTaco" layoutX="22.0" layoutY="243.0" prefHeight="48.0" prefWidth="280.0" promptText="Precio" style="-fx-background-color: #808080; -fx-text-fill: white; -fx-border-radius: 16; -fx-background-radius: 16;">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="TextFieldModificarDescripcionTaco" layoutX="22.0" layoutY="320.0" prefHeight="48.0" prefWidth="280.0" promptText="Descripción" style="-fx-background-color: #808080; -fx-text-fill: white; -fx-border-radius: 16; -fx-background-radius: 16;">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <ComboBox fx:id="ComboBoxModificarTipoCarne" layoutX="379.0" layoutY="184.0" onMouseClicked="#OnMouseClickedComboBoxTipoCarne" prefHeight="31.0" prefWidth="170.0" promptText="Tipo de Carne" style="-fx-border-color: 16; -fx-border-radius: 16; -fx-background-color: white;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <ListView fx:id="ListViewListaTacos" layoutX="634.0" layoutY="145.0" prefHeight="243.0" prefWidth="280.0" style="-fx-border-color: black;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ListView>
+      <Button fx:id="ButtomEliminarTaco" layoutX="476.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomEliminarTaco" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: DC4540; -fx-border-radius: 16; -fx-background-radius: 16;" text="Eliminar">
+         <font>
+            <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
+      <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="394.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/gear.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="36.0" layoutX="641.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/buscar.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

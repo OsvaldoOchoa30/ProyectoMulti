@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,11 +10,6 @@
 <AnchorPane prefHeight="451.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.MenuAdminController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="65.0" stroke="#101010" strokeType="INSIDE" strokeWidth="0.0" width="810.0" />
-      <Label layoutX="262.0" layoutY="13.0" text="Menú Administrador" textFill="WHITE">
-         <font>
-            <Font name="Tahoma Bold" size="30.0" />
-         </font>
-      </Label>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="255.0" layoutX="36.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="255.0" layoutX="228.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="255.0" layoutX="416.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="170.0" />
@@ -44,10 +38,6 @@
          <font>
             <Font name="Verdana Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="ButtomCancelarPedido" layoutX="421.0" layoutY="316.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCancelarPedido" prefHeight="25.0" prefWidth="158.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #f6ffa4; -fx-border-color: black;" text="Cancelar Pedido">
-         <font>
-            <Font name="Verdana Bold" size="12.0" />
-         </font></Button>
       <Button fx:id="ButtomVerPedidos" layoutX="421.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerPedidos" prefHeight="25.0" prefWidth="158.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #f6ffa4; -fx-border-color: black;" text="Ver Pedidos">
          <font>
             <Font name="Verdana Bold" size="12.0" />
@@ -61,7 +51,7 @@
             <Image url="@img/usuario-de-perfil.png" />
          </image>
       </ImageView>
-      <Button fx:id="ButtomCerrarSesion" layoutX="682.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCerrarSesion" text="Cerrar Sesión" />
+      <Button fx:id="ButtomCerrarSesion" layoutX="682.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCerrarSesion" prefHeight="20.0" prefWidth="125.0" style="-fx-background-color: #808080; -fx-border-radius: 12; -fx-background-radius: 12;" text="Cerrar Sesión" textFill="WHITE" />
       <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="287.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/listauno.png" />
@@ -87,5 +77,10 @@
             <Font name="Verdana Bold" size="12.0" />
          </font>
       </Button>
+      <ImageView fitHeight="65.0" fitWidth="62.0" layoutX="390.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/corona.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
