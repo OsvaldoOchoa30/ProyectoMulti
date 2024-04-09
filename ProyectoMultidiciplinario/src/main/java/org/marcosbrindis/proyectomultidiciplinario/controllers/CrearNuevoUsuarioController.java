@@ -70,28 +70,31 @@ public class CrearNuevoUsuarioController {
         String rolUser = ComboBoxRolNU.getValue();
 
         if (name.isEmpty() || password1.isEmpty() || password2.isEmpty() || rolUser == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, complete todos los campos.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
 
         if (!password1.equals(password2)) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Las contraseñas no coinciden.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
 
         if (!verificarPassword(password1)) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("La contraseña debe tener al menos 6 caracteres y al menos un número.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
@@ -103,6 +106,7 @@ public class CrearNuevoUsuarioController {
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("El usuario ya existe.!!!");
+                agregarCssAlerta(alert);
                 alert.showAndWait();
                 return;
             }
@@ -111,11 +115,13 @@ public class CrearNuevoUsuarioController {
 
         Usuario usuario = new Usuario(name, password1, rolUser);
         taqueria.addUser(usuario);
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("USUARIO CREADO");
         alert.setHeaderText(null);
         alert.setContentText("usuario creado correctamente!!!.");
+        agregarCssAlerta(alert);
         alert.showAndWait();
+        limpiarCampos();
     }
 
     @FXML
@@ -129,7 +135,21 @@ public class CrearNuevoUsuarioController {
         rolUsuarioCombobox.add("Empleado");
         ComboBoxRolNU.getItems().addAll(rolUsuarioCombobox);
     }
-
+    public void limpiarCampos(){
+        TextFieldNombreNU.clear();
+        TextFieldPasswordNU.clear();
+        TextFieldPasswordCorrectaNU.clear();
+        ComboBoxRolNU.getSelectionModel().clearSelection();
+    }
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
+        }
+    }
     public void setTaqueria(Taqueria taqueria){
         this.taqueria=taqueria;
     }

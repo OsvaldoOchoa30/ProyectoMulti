@@ -75,6 +75,7 @@ public class CrearTacoController {
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, complete todos los campos.");
+                agregarCssAlerta(alert);
                 alert.showAndWait();
                 return;
             }
@@ -85,6 +86,7 @@ public class CrearTacoController {
                     alert.setTitle("Error!");
                     alert.setHeaderText(null);
                     alert.setContentText("El producto ya Existe.");
+                    agregarCssAlerta(alert);
                     alert.showAndWait();
                     return;
                 }
@@ -93,18 +95,21 @@ public class CrearTacoController {
             Taco taco = new Taco(name, descrip, precio, 1, typemeat);
             taqueria.addProduct(taco);
 
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("AGREGADO!");
             alert.setHeaderText(null);
             alert.setContentText("Taco agregado correctamente.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
-
+            limpiarCampos();
             System.out.println("Taco agregado correctamente");
+
         } catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, ingrese un valor válido para el precio.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
@@ -123,10 +128,26 @@ public class CrearTacoController {
             typeMeatCombobox.add("Puerco");
             typeMeatCombobox.add("pollo");
             ComboBoxTipoCarne.getItems().addAll(typeMeatCombobox);
+            ComboBoxTipoCarne.setPromptText("Tipo de Carne");
+        }
+    }
+    public void limpiarCampos(){
+        ComboBoxTipoCarne.getSelectionModel().clearSelection();
+        ComboBoxTipoCarne.setPromptText("Tipo de Carne");
+        TextFieldDescripcionTaco.clear();
+        TextFieldNombreTaco.clear();
+        TextFieldPrecioTaco.clear();
+    }
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
         }
     }
     public void setTaqueria(Taqueria taqueria){
         this.taqueria=taqueria;
     }
-
 }

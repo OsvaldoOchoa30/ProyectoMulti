@@ -60,10 +60,11 @@ public class EliminarUsuarioController {
     void OnMouseClickedButtomEliminarUsuario(MouseEvent event) {
         Usuario usuarioSeleccionado = ListViewListaUsuarios.getSelectionModel().getSelectedItem();
         if (usuarioSeleccionado == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, selecciona un usuario de la lista.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
@@ -73,11 +74,13 @@ public class EliminarUsuarioController {
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("No se puede eliminar al último administrador.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
 
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        agregarCssAlerta(confirmAlert);
         confirmAlert.setTitle("Confirmar Eliminación");
         confirmAlert.setHeaderText(null);
         confirmAlert.setContentText("¿Seguro que quieres eliminar este Usuario?");
@@ -89,6 +92,7 @@ public class EliminarUsuarioController {
             successAlert.setTitle("Usuario Eliminado");
             successAlert.setHeaderText(null);
             successAlert.setContentText("El Usuario ha sido eliminado correctamente.");
+            agregarCssAlerta(successAlert);
             successAlert.showAndWait();
             actualizarListaUsuarios();
         }
@@ -132,6 +136,15 @@ public class EliminarUsuarioController {
         if (taqueria != null) {
             ObservableList<Usuario> usuarios = FXCollections.observableArrayList(taqueria.getUserList());
             ListViewListaUsuarios.setItems(usuarios);
+        }
+    }
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
         }
     }
 

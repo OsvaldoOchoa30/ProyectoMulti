@@ -108,10 +108,11 @@ public class ModificarTacoController {
         try {
             Producto productoSeleccionado = ListViewListaTacos.getSelectionModel().getSelectedItem();
             if (productoSeleccionado == null) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+                Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, selecciona un taco de la lista.");
+                agregarCssAlerta(alert);
                 alert.showAndWait();
                 return;
             }
@@ -122,19 +123,21 @@ public class ModificarTacoController {
             String nuevoTipoCarne = ComboBoxModificarTipoCarne.getValue();
 
             if (nuevoNombre.isEmpty() || nuevaDescripcion.isEmpty() || nuevoTipoCarne == null) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+                Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, complete todos los campos.");
+                agregarCssAlerta(alert);
                 alert.showAndWait();
                 return;
             }
             for (Producto producto : taqueria.getMenu()) {
                 if (!producto.equals(productoSeleccionado) && producto.getProductName().equalsIgnoreCase(nuevoNombre)) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setTitle("Error");
                     alert.setHeaderText(null);
                     alert.setContentText("El nombre '" + nuevoNombre + "' ya está siendo utilizado por otro producto.");
+                    agregarCssAlerta(alert);
                     alert.showAndWait();
                     return;
                 }
@@ -147,6 +150,7 @@ public class ModificarTacoController {
             alert.setTitle("Taco Modificado");
             alert.setHeaderText(null);
             alert.setContentText("El taco ha sido modificado correctamente.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
 
             actualizarListaTacos();
@@ -238,6 +242,16 @@ public class ModificarTacoController {
             });
 
             ListViewListaTacos.setItems(productos);
+        }
+    }
+
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
         }
     }
 

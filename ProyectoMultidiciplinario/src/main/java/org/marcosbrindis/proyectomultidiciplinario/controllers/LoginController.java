@@ -80,6 +80,7 @@ public class LoginController {
                     alert.setTitle("Error");
                     alert.setHeaderText(null);
                     alert.setContentText("Contraseñas Incorrecta!!!.");
+                    agregarCssAlerta(alert);
                     alert.showAndWait();
                 }
             }else {
@@ -87,6 +88,7 @@ public class LoginController {
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Nombre de usuario no encontrado!!!.");
+                agregarCssAlerta(alert);
                 alert.showAndWait();
             }
         }
@@ -101,6 +103,15 @@ public class LoginController {
 
     @FXML
     void initialize() {
+    }
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
+        }
     }
 
 }

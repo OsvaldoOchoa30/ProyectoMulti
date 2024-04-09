@@ -182,15 +182,16 @@ public class CrearPedidoController {
             warningAlert.setTitle("Advertencia");
             warningAlert.setHeaderText(null);
             warningAlert.setContentText("No hay ningun Producto en el pedido\n no se puede crear el pedido.");
+            agregarCssAlerta(warningAlert);
             warningAlert.showAndWait();
             return;
         }
         calcularTotal();
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        agregarCssAlerta(confirmAlert);
         confirmAlert.setTitle("Confirmar Pedido");
         confirmAlert.setHeaderText(null);
         confirmAlert.setContentText("¿Seguro que quieres Realiza el pedido?");
-
         Optional<ButtonType> result = confirmAlert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             LinkedList<Producto> copiaOrden = new LinkedList<>();
@@ -215,6 +216,7 @@ public class CrearPedidoController {
             successAlert.setTitle("Pedido realizado.");
             successAlert.setHeaderText(null);
             successAlert.setContentText("El pedido se realizó correctamente.");
+            agregarCssAlerta(successAlert);
             successAlert.showAndWait();
         }
         /*for (Pedido pedido : taqueria.getOrderList()) {
@@ -291,6 +293,15 @@ public class CrearPedidoController {
                 productoData.add(producto);
             }
             tableViewAgregarProducto.setItems(productoData);
+        }
+    }
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
         }
     }
 }

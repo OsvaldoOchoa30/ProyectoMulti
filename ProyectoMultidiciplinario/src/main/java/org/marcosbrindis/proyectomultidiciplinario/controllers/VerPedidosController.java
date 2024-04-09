@@ -91,6 +91,7 @@ public class VerPedidosController {
         Pedido pedidoSeleccionado = tableViewVerPedidos.getSelectionModel().getSelectedItem();
         if (pedidoSeleccionado != null) {
             Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+            agregarCssAlerta(confirmAlert);
             confirmAlert.setTitle("Confirmar Cancelacion");
             confirmAlert.setHeaderText(null);
             confirmAlert.setContentText("¿Seguro que quieres Cancelar este Pedido?");
@@ -103,6 +104,7 @@ public class VerPedidosController {
                     successAlert.setTitle("Pedido Cancelado");
                     successAlert.setHeaderText(null);
                     successAlert.setContentText("El Pedido ha sido Cancelado correctamente.");
+                    agregarCssAlerta(successAlert);
                     successAlert.showAndWait();
                     tableViewVerPedidos.refresh();
                 } else {
@@ -110,6 +112,7 @@ public class VerPedidosController {
                     warningAlert.setTitle("Advertencia");
                     warningAlert.setHeaderText(null);
                     warningAlert.setContentText("No se puede cancelar este pedido, ya que ya está en proceso.");
+                    agregarCssAlerta(warningAlert);
                     warningAlert.showAndWait();
                 }
             }
@@ -145,6 +148,16 @@ public class VerPedidosController {
             tableColumnTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
         }
     }
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
+        }
+    }
+
     public void setTaqueria(Taqueria taqueria){
         this.taqueria = taqueria;
         if (tableViewVerPedidos != null && taqueria != null) {

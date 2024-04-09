@@ -75,6 +75,7 @@ public class VerVentasController {
         Pedido ventaSeleccionada = tableViewVentas.getSelectionModel().getSelectedItem();
         if (ventaSeleccionada != null) {
             Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+            agregarCssAlerta(confirmAlert);
             confirmAlert.setTitle("Confirmar Cancelacion");
             confirmAlert.setHeaderText(null);
             confirmAlert.setContentText("¿Seguro que quieres Cancelar este Pedido?");
@@ -87,6 +88,7 @@ public class VerVentasController {
                     successAlert.setTitle("Pedido Cancelado");
                     successAlert.setHeaderText(null);
                     successAlert.setContentText("El Pedido ha sido Cancelado correctamente.");
+                    agregarCssAlerta(successAlert);
                     successAlert.showAndWait();
                     tableViewVentas.refresh();
                 double totalVentas = calcularTotalVentas();
@@ -123,6 +125,16 @@ public class VerVentasController {
             tableColumnVentasEstado.setCellValueFactory(new PropertyValueFactory<>("status"));
         }
     }
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
+        }
+    }
+
     public void setTaqueria(Taqueria taqueria){
         this.taqueria=taqueria;
         if (tableViewVentas != null && taqueria != null) {

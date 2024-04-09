@@ -41,6 +41,15 @@ public class PrincipalController {
         String rol="Administrador";
         if (!name.isEmpty()&&!password1.isEmpty()) {
             if (password2.equals(password1)) {
+                if (!verificarPassword(password1)) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("La contraseña debe tener al menos 6 caracteres y al menos un número.");
+                    agregarCssAlerta(alert);
+                    alert.showAndWait();
+                    return;
+                }
                 Usuario usuario = new Usuario(name, password1, rol);
                 taqueria = new Taqueria();
                 taqueria.addUser(usuario);
@@ -66,6 +75,7 @@ public class PrincipalController {
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Contraseñas NO COINCIDEN!!!.");
+                agregarCssAlerta(alert);
                 alert.showAndWait();
             }
         }else {
@@ -73,6 +83,7 @@ public class PrincipalController {
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Hay campos sin llenar!!!.\n"+"Favor de llenarlos.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
         }
     }
@@ -80,6 +91,19 @@ public class PrincipalController {
         this.taqueria=taqueria;
     }
 
+    public boolean verificarPassword(String contrase) {
+        return contrase.matches(".*\\d.*") && contrase.length() >= 6;
+    }
+
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
+        }
+    }
     @FXML
     void initialize() {
     }

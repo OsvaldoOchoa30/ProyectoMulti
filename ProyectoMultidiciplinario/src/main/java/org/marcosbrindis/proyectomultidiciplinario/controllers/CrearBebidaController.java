@@ -77,10 +77,11 @@ public class CrearBebidaController {
         try {
             Double precio = Double.parseDouble(precioString);
             if (name.isEmpty() || descrip.isEmpty() || precioString.isEmpty() || sizeBeb == null || typeBeb == null) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+                Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, complete todos los campos.");
+                agregarCssAlerta(alert);
                 alert.showAndWait();
                 return;
             }
@@ -91,6 +92,7 @@ public class CrearBebidaController {
                     alert.setTitle("Error!");
                     alert.setHeaderText(null);
                     alert.setContentText("El producto ya Existe.");
+                    agregarCssAlerta(alert);
                     alert.showAndWait();
                     return;
                 }
@@ -99,11 +101,14 @@ public class CrearBebidaController {
             Bebida bebida = new Bebida(name, descrip, precio, 1, typeBeb,sizeBeb);
             taqueria.addProduct(bebida);
 
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("AGREGADO!");
             alert.setHeaderText(null);
             alert.setContentText("Bebida agregada correctamente.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
+
+            limpiarCampos();
 
             System.out.println("bebida se agrafo");
             for (Producto taqueria1 : taqueria.getMenu()) {
@@ -111,7 +116,7 @@ public class CrearBebidaController {
             }
 
         } catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, ingrese un valor válido para el precio.");
@@ -148,8 +153,23 @@ public class CrearBebidaController {
             ComboBoxSizeBebida.getItems().addAll(sizeBebida);
         }
     }
+    public void limpiarCampos(){
+        ComboBoxSizeBebida.getSelectionModel().clearSelection();
+        TextFieldDescripcionBebida.clear();
+        TextFieldNombreBebida.clear();
+        TextFieldPrecioBebida.clear();
+    }
     public void setTaqueria(Taqueria taqueria){
         this.taqueria=taqueria;
+    }
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
+        }
     }
 
 }

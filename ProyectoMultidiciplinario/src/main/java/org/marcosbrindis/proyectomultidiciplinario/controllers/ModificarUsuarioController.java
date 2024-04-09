@@ -69,6 +69,7 @@ public class ModificarUsuarioController {
             alert.setTitle("Advertencia");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, seleccione un usuario.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
@@ -93,6 +94,7 @@ public class ModificarUsuarioController {
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Las contraseñas no coinciden.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
@@ -102,6 +104,7 @@ public class ModificarUsuarioController {
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("La contraseña debe tener al menos 6 caracteres y al menos un número.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
@@ -112,6 +115,7 @@ public class ModificarUsuarioController {
         alert.setTitle("Contraseña modificada");
         alert.setHeaderText(null);
         alert.setContentText("La contraseña ha sido modificada correctamente.");
+        agregarCssAlerta(alert);
         alert.showAndWait();
 
     }
@@ -140,6 +144,15 @@ public class ModificarUsuarioController {
             });
         } else {
             System.err.println("Taqueria no inicializada.");
+        }
+    }
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
         }
     }
 

@@ -80,15 +80,17 @@ public class ModificarBebidaController {
         Producto productoSeleccionado = ListViewListaBebidas.getSelectionModel().getSelectedItem();
 
         if (productoSeleccionado == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, selecciona una Bebida de la lista.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
 
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        agregarCssAlerta(confirmAlert);
         confirmAlert.setTitle("Confirmar Eliminación");
         confirmAlert.setHeaderText(null);
         confirmAlert.setContentText("¿Seguro que quieres eliminar esta bebida?");
@@ -100,6 +102,7 @@ public class ModificarBebidaController {
             successAlert.setTitle("Bebida Eliminada");
             successAlert.setHeaderText(null);
             successAlert.setContentText("La Bebida ha sido eliminada correctamente.");
+            agregarCssAlerta(successAlert);
             successAlert.showAndWait();
             actualizarListaBebidas();
         }
@@ -110,10 +113,11 @@ public class ModificarBebidaController {
         try {
             Producto productoSeleccionado = ListViewListaBebidas.getSelectionModel().getSelectedItem();
             if (productoSeleccionado == null) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+                Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, selecciona una Bebida de la lista.");
+                agregarCssAlerta(alert);
                 alert.showAndWait();
                 return;
             }
@@ -129,6 +133,7 @@ public class ModificarBebidaController {
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, complete todos los campos.");
+                agregarCssAlerta(alert);
                 alert.showAndWait();
                 return;
             }
@@ -138,6 +143,7 @@ public class ModificarBebidaController {
                     alert.setTitle("Error");
                     alert.setHeaderText(null);
                     alert.setContentText("El nombre '" + nuevoNombre + "' ya está siendo utilizado por otro producto.");
+                    agregarCssAlerta(alert);
                     alert.showAndWait();
                     return;
                 }
@@ -150,6 +156,7 @@ public class ModificarBebidaController {
             alert.setTitle("Bebida Modificada");
             alert.setHeaderText(null);
             alert.setContentText("La Bebida ha sido modificada correctamente.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
 
             actualizarListaBebidas();
@@ -159,10 +166,11 @@ public class ModificarBebidaController {
             }
         }*/
         } catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, ingrese un valor válido para el precio.");
+            agregarCssAlerta(alert);
             alert.showAndWait();
             return;
         }
@@ -262,6 +270,15 @@ public class ModificarBebidaController {
         }
     }
 
+    public void agregarCssAlerta(Alert alert){
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
+        }
+    }
 
     public void setTaqueria(Taqueria taqueria) {
         this.taqueria = taqueria;
