@@ -29,7 +29,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
         </Button>
-        <ImageView fitHeight="140.0" fitWidth="150.0" layoutX="172.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="140.0" fitWidth="150.0" layoutX="177.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/user.png" />
             </image>
