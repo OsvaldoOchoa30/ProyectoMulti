@@ -88,7 +88,7 @@ public class CrearPedidoController {
                MenuAdminController menuAdminController = fxmlLoader.getController();
                menuAdminController.setTaqueria(taqueria);
                Stage stage = new Stage();
-               stage.setTitle("Menu!!!");
+               stage.setTitle("Menu del Administador.");
                stage.setScene(scene);
                stage.show();
            } catch (IOException e) {
@@ -104,7 +104,7 @@ public class CrearPedidoController {
                MenuEmpleadoController menuEmpleadoController = fxmlLoader.getController();
                menuEmpleadoController.setTaqueria(taqueria);
                Stage stage = new Stage();
-               stage.setTitle("Menu!!!");
+               stage.setTitle("Menu del Empleado.");
                stage.setScene(scene);
                stage.show();
            } catch (IOException e) {
@@ -141,11 +141,11 @@ public class CrearPedidoController {
     void OnMouseClickedButtomDecrementar(MouseEvent event) {
         Producto productoSeleccionado = tableViewCrearPedido.getSelectionModel().getSelectedItem();
         if (productoSeleccionado == null) {
-            System.out.println("no ha seleccionado nada");
+            System.out.println("No ha seleccionado nada.");
             return;
         }
         if(productoSeleccionado.getQuantity()<= 1) {
-            System.out.println("no puede ser menor a 1");
+            System.out.println("La cantidad no puede ser menor a 1.");
             return;
         }
         productoSeleccionado.decrementarCantidad();
@@ -189,9 +189,9 @@ public class CrearPedidoController {
         calcularTotal();
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         agregarCssAlerta(confirmAlert);
-        confirmAlert.setTitle("Confirmar Pedido");
+        confirmAlert.setTitle("Confirmar Pedido.");
         confirmAlert.setHeaderText(null);
-        confirmAlert.setContentText("¿Seguro que quieres Realiza el pedido?");
+        confirmAlert.setContentText("¿Seguro que desea realiza el pedido?");
         Optional<ButtonType> result = confirmAlert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             LinkedList<Producto> copiaOrden = new LinkedList<>();

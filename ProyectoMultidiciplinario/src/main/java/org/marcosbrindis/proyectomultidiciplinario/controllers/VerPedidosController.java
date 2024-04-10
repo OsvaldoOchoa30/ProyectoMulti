@@ -54,7 +54,7 @@ public class VerPedidosController {
                 MenuAdminController menuAdminController = fxmlLoader.getController();
                 menuAdminController.setTaqueria(taqueria);
                 Stage stage = new Stage();
-                stage.setTitle("Menu!!!.");
+                stage.setTitle("Menu.");
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException e) {
@@ -70,7 +70,7 @@ public class VerPedidosController {
                 MenuEmpleadoController menuEmpleadoController = fxmlLoader.getController();
                 menuEmpleadoController.setTaqueria(taqueria);
                 Stage stage = new Stage();
-                stage.setTitle("Menu!!!");
+                stage.setTitle("Menu.");
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException e) {
@@ -92,26 +92,26 @@ public class VerPedidosController {
         if (pedidoSeleccionado != null) {
             Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
             agregarCssAlerta(confirmAlert);
-            confirmAlert.setTitle("Confirmar Cancelacion");
+            confirmAlert.setTitle("Confirmar Cancelacion.");
             confirmAlert.setHeaderText(null);
-            confirmAlert.setContentText("¿Seguro que quieres Cancelar este Pedido?");
+            confirmAlert.setContentText("¿Seguro que quieres cancelar este pedido?");
 
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 boolean actualizacionExitosa = taqueria.actualizarEstadoPedido(pedidoSeleccionado, false);
                 if (actualizacionExitosa) {
                     Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-                    successAlert.setTitle("Pedido Cancelado");
+                    successAlert.setTitle("Pedido cancelado.");
                     successAlert.setHeaderText(null);
-                    successAlert.setContentText("El Pedido ha sido Cancelado correctamente.");
+                    successAlert.setContentText("El Pedido ha sido cancelado correctamente.");
                     agregarCssAlerta(successAlert);
                     successAlert.showAndWait();
                     tableViewVerPedidos.refresh();
                 } else {
                     Alert warningAlert = new Alert(Alert.AlertType.WARNING);
-                    warningAlert.setTitle("Advertencia");
+                    warningAlert.setTitle("Advertencia.");
                     warningAlert.setHeaderText(null);
-                    warningAlert.setContentText("No se puede cancelar este pedido, ya que ya está en proceso.");
+                    warningAlert.setContentText("No se puede cancelar este pedido, ya que está en proceso.");
                     agregarCssAlerta(warningAlert);
                     warningAlert.showAndWait();
                 }

@@ -18,15 +18,24 @@
          </font>
          <effect>
             <ColorAdjust />
-         </effect></TextField>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldPrecioBebida" layoutX="17.0" layoutY="221.0" prefHeight="48.0" prefWidth="343.0" promptText="Precio" style="-fx-background-color: #808080; -fx-text-fill: white; -fx-border-radius: 16; -fx-background-radius: 16;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldDescripcionBebida" layoutX="17.0" layoutY="298.0" prefHeight="48.0" prefWidth="343.0" promptText="Descripcion" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <ComboBox fx:id="ComboBoxTipoBebida" layoutX="392.0" layoutY="150.0" onMouseClicked="#OnMouseClickedComboBoxTipoBebida" prefHeight="30.0" prefWidth="170.0" promptText="Tipo de Bedida" style="-fx-border-color: 16; -fx-border-radius: 16; -fx-background-color: white;">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -48,7 +57,7 @@
       </Button>
       <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="329.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/jugo.png" />
+            <Image url="@img/limon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="8.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">

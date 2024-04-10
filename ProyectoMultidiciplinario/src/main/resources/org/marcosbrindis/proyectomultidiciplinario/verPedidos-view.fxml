@@ -15,9 +15,9 @@
       <TableView fx:id="tableViewVerPedidos" layoutX="95.0" layoutY="198.0" prefHeight="292.0" prefWidth="623.0">
         <columns>
           <TableColumn fx:id="tableColumnID" prefWidth="53.5999755859375" text="ID" />
-            <TableColumn fx:id="tableColumnFecha" prefWidth="128.0" text="Fecha" />
-            <TableColumn fx:id="tableColumnTotal" prefWidth="131.199951171875" text="Total" />
-            <TableColumn fx:id="tableColumnEstado" prefWidth="256.79999389648435" text="Estado" />
+            <TableColumn fx:id="tableColumnFecha" prefWidth="175.20001220703125" text="Fecha" />
+            <TableColumn fx:id="tableColumnTotal" prefWidth="161.60003662109375" text="Total" />
+            <TableColumn fx:id="tableColumnEstado" prefWidth="179.99993896484375" text="Estado" />
         </columns>
       </TableView>
       <Button fx:id="ButtomCancelarOrden" layoutX="95.0" layoutY="509.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCancelarOrden" prefHeight="48.0" prefWidth="159.0" style="-fx-background-radius: 16; -fx-border-radius: 16; -fx-background-color: #FFA31A;" text="Cancelar Orden">
@@ -40,7 +40,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></TextField>
-      <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="338.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="137.0" fitWidth="137.0" layoutX="337.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/plato.png" />
          </image>

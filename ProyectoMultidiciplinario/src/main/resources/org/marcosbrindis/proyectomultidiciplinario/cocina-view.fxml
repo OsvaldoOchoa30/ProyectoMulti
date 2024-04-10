@@ -10,8 +10,8 @@
 
 <AnchorPane prefHeight="519.0" prefWidth="677.0" style="-fx-background-color: #1B1B1B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.CocinaController">
    <children>
-      <Label fx:id="labelListaPedidos" layoutX="150.0" layoutY="211.0" prefHeight="182.0" prefWidth="410.0" style="-fx-background-color: #808080; -fx-text-fill: white;" />
-      <Button fx:id="ButtomFinalizarPedido" layoutX="184.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomFinalizarPedido" prefHeight="48.0" prefWidth="343.0" style="-fx-background-color: #ffa31a; -fx-border-radius: 16; -fx-background-radius: 16;" text="Finalizar Pedido">
+      <Label fx:id="labelListaPedidos" layoutX="150.0" layoutY="205.0" prefHeight="200.0" prefWidth="410.0" style="-fx-background-color: #808080; -fx-text-fill: white; -fx-background-radius: 3; -fx-border-radius: 3;" />
+      <Button fx:id="ButtomFinalizarPedido" layoutX="183.0" layoutY="432.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomFinalizarPedido" prefHeight="48.0" prefWidth="343.0" style="-fx-background-color: #ffa31a; -fx-border-radius: 16; -fx-background-radius: 16;" text="Finalizar Pedido">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>

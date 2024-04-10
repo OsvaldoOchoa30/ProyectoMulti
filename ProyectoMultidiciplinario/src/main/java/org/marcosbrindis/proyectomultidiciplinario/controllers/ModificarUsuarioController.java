@@ -50,7 +50,7 @@ public class ModificarUsuarioController {
             MenuAdminController menuAdminController = fxmlLoader.getController();
             menuAdminController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Menu!!!.");
+            stage.setTitle("Menu.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -66,7 +66,7 @@ public class ModificarUsuarioController {
         String nombreUsuarioSeleccionado = ListViewListaUsuarios.getSelectionModel().getSelectedItem();
         if (nombreUsuarioSeleccionado == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Advertencia");
+            alert.setTitle("Advertencia.");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, seleccione un usuario.");
             agregarCssAlerta(alert);
@@ -91,7 +91,7 @@ public class ModificarUsuarioController {
 
         if (!password1.equals(password2)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Error.");
             alert.setHeaderText(null);
             alert.setContentText("Las contraseñas no coinciden.");
             agregarCssAlerta(alert);
@@ -101,7 +101,7 @@ public class ModificarUsuarioController {
 
         if (!verificarPassword(password1)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Error.");
             alert.setHeaderText(null);
             alert.setContentText("La contraseña debe tener al menos 6 caracteres y al menos un número.");
             agregarCssAlerta(alert);
@@ -112,7 +112,7 @@ public class ModificarUsuarioController {
         usuario.setPassword(password1);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Contraseña modificada");
+        alert.setTitle("Contraseña modificada.");
         alert.setHeaderText(null);
         alert.setContentText("La contraseña ha sido modificada correctamente.");
         agregarCssAlerta(alert);

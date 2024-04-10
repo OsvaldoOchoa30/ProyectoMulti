@@ -78,7 +78,7 @@ public class ModificarTacoController {
 
         if (productoSeleccionado == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Error.");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, selecciona un taco de la lista.");
             alert.showAndWait();
@@ -86,7 +86,7 @@ public class ModificarTacoController {
         }
 
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
-        confirmAlert.setTitle("Confirmar Eliminación");
+        confirmAlert.setTitle("Confirmar Eliminación.");
         confirmAlert.setHeaderText(null);
         confirmAlert.setContentText("¿Seguro que quieres eliminar este taco?");
 
@@ -94,7 +94,7 @@ public class ModificarTacoController {
         if (result.isPresent() && result.get() == ButtonType.OK) {
             taqueria.removeProduct(productoSeleccionado);
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-            successAlert.setTitle("Taco Eliminado");
+            successAlert.setTitle("Taco Eliminado.");
             successAlert.setHeaderText(null);
             successAlert.setContentText("El taco ha sido eliminado correctamente.");
             successAlert.showAndWait();
@@ -109,7 +109,7 @@ public class ModificarTacoController {
             Producto productoSeleccionado = ListViewListaTacos.getSelectionModel().getSelectedItem();
             if (productoSeleccionado == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Error");
+                alert.setTitle("Error.");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, selecciona un taco de la lista.");
                 agregarCssAlerta(alert);
@@ -124,7 +124,7 @@ public class ModificarTacoController {
 
             if (nuevoNombre.isEmpty() || nuevaDescripcion.isEmpty() || nuevoTipoCarne == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Error");
+                alert.setTitle("Error.");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, complete todos los campos.");
                 agregarCssAlerta(alert);
@@ -134,7 +134,7 @@ public class ModificarTacoController {
             for (Producto producto : taqueria.getMenu()) {
                 if (!producto.equals(productoSeleccionado) && producto.getProductName().equalsIgnoreCase(nuevoNombre)) {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Error");
+                    alert.setTitle("Error.");
                     alert.setHeaderText(null);
                     alert.setContentText("El nombre '" + nuevoNombre + "' ya está siendo utilizado por otro producto.");
                     agregarCssAlerta(alert);
@@ -147,7 +147,7 @@ public class ModificarTacoController {
             taqueria.modifyProduct(idProductoSeleccionado, nuevoNombre, nuevaDescripcion, nuevoPrecio, nuevoTipoCarne, null, null);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Taco Modificado");
+            alert.setTitle("Taco Modificado.");
             alert.setHeaderText(null);
             alert.setContentText("El taco ha sido modificado correctamente.");
             agregarCssAlerta(alert);
@@ -161,7 +161,7 @@ public class ModificarTacoController {
         }*/
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Error.");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, ingrese un valor válido para el precio.");
             alert.showAndWait();

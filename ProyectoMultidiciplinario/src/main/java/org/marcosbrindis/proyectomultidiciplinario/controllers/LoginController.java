@@ -49,7 +49,7 @@ public class LoginController {
                             scene = new Scene(fxmlLoader.load());
                             MenuAdminController menuAdminController = fxmlLoader.getController();
                             menuAdminController.setTaqueria(taqueria);
-                            callSu.setTitle("Menu!!!");
+                            callSu.setTitle("Menu.");
                             callSu.setScene(scene);
                             callSu.show();
                         } catch (IOException e) {
@@ -65,7 +65,7 @@ public class LoginController {
                             scene = new Scene(fxmlLoader.load());
                             MenuEmpleadoController menuEmpleadoController = fxmlLoader.getController();
                             menuEmpleadoController.setTaqueria(taqueria);
-                            callSu.setTitle("Menu!!!");
+                            callSu.setTitle("Menu.");
                             callSu.setScene(scene);
                             callSu.show();
                         } catch (IOException e) {
@@ -77,17 +77,17 @@ public class LoginController {
                     }
                 }else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
+                    alert.setTitle("Error.");
                     alert.setHeaderText(null);
-                    alert.setContentText("Contraseñas Incorrecta!!!.");
+                    alert.setContentText("Contraseña Incorrecta.");
                     agregarCssAlerta(alert);
                     alert.showAndWait();
                 }
             }else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
+                alert.setTitle("Error.");
                 alert.setHeaderText(null);
-                alert.setContentText("Nombre de usuario no encontrado!!!.");
+                alert.setContentText("Nombre de usuario no encontrado.");
                 agregarCssAlerta(alert);
                 alert.showAndWait();
             }

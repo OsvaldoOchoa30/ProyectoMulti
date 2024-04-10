@@ -17,16 +17,16 @@
             <Image url="@img/flecha-circulo-izquierda.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="110.0" fitWidth="110.0" layoutX="400.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="135.0" fitWidth="140.0" layoutX="370.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/jugo.png" />
+            <Image url="@img/limon.png" />
          </image>
       </ImageView>
       <Button fx:id="ButtomBackToModificarProductoModificarBebida" layoutX="8.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomBackToModificarProductoModificarBebida" prefHeight="26.0" prefWidth="24.0" style="-fx-background-color: transparent;" textFill="TRANSPARENT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="ButtomModificarBebida" layoutX="324.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomModificarBebida" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: #FFA31A; -fx-border-radius: 16; -fx-background-radius: 16;" text="Modificar">
+      <Button fx:id="ButtomModificarBebida" layoutX="322.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomModificarBebida" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: #FFA31A; -fx-border-radius: 16; -fx-background-radius: 16;" text="Modificar">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
@@ -34,20 +34,32 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <TextField fx:id="TextFieldBuscarBebida" layoutX="633.0" layoutY="95.0" prefHeight="38.0" prefWidth="224.0" promptText="Bebida a Modificar" style="-fx-text-fill: white; -fx-border-radius: 12; -fx-background-radius: 12; -fx-background-color: #808080;" />
+      <TextField fx:id="TextFieldBuscarBebida" layoutX="633.0" layoutY="95.0" prefHeight="38.0" prefWidth="224.0" promptText="Bebida a Modificar" style="-fx-text-fill: white; -fx-border-radius: 12; -fx-background-radius: 12; -fx-background-color: #808080;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldNameModificarBebida" layoutX="18.0" layoutY="171.0" prefHeight="48.0" prefWidth="280.0" promptText="Nombre Nuevo" style="-fx-text-fill: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-background-color: #808080;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldModificarPrecioBebida" layoutX="18.0" layoutY="253.0" prefHeight="48.0" prefWidth="280.0" promptText="Precio Nuevo" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldModificarDescripcionBebida" layoutX="18.0" layoutY="333.0" prefHeight="48.0" prefWidth="280.0" promptText="Descripción Nueva" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
-      <ComboBox fx:id="ComboBoxModificarTipoBebida" layoutX="325.0" layoutY="179.0" onMouseClicked="#OnMouseClickedComboBoxModificarTipoBebida" prefHeight="31.0" prefWidth="140.0" promptText="Tipo de Bebida" style="-fx-border-color: 16; -fx-border-radius: 16; -fx-background-color: white;">
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <ComboBox fx:id="ComboBoxModificarTipoBebida" layoutX="323.0" layoutY="177.0" onMouseClicked="#OnMouseClickedComboBoxModificarTipoBebida" prefHeight="31.0" prefWidth="140.0" promptText="Tipo de Bebida" style="-fx-border-color: 16; -fx-border-radius: 16; -fx-background-color: white;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ComboBox>
@@ -55,7 +67,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ListView>
-      <Button fx:id="ButtomEliminarBebida" layoutX="477.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomEliminarBebida" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: DC4540; -fx-border-radius: 16; -fx-background-radius: 16;" text="Eliminar">
+      <Button fx:id="ButtomEliminarBebida" layoutX="475.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomEliminarBebida" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: DC4540; -fx-border-radius: 16; -fx-background-radius: 16;" text="Eliminar">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
@@ -63,13 +75,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ComboBox fx:id="ComboBoxModificarTamaño" layoutX="477.0" layoutY="179.0" onMouseClicked="#OnMouseClickedComboBoxModificarTamaño" prefHeight="31.0" prefWidth="140.0" promptText="Tamaño" style="-fx-border-color: 16; -fx-border-radius: 16; -fx-background-color: white;">
+      <ComboBox fx:id="ComboBoxModificarTamaño" layoutX="475.0" layoutY="177.0" onMouseClicked="#OnMouseClickedComboBoxModificarTamaño" prefHeight="31.0" prefWidth="140.0" promptText="Tamaño" style="-fx-border-color: 16; -fx-border-radius: 16; -fx-background-color: white;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ComboBox>
-      <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="494.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="483.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/gear.png" />
+            <Image url="@img/configuracion.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="865.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">

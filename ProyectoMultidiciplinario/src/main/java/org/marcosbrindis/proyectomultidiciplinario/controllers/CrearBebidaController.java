@@ -78,7 +78,7 @@ public class CrearBebidaController {
             Double precio = Double.parseDouble(precioString);
             if (name.isEmpty() || descrip.isEmpty() || precioString.isEmpty() || sizeBeb == null || typeBeb == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Error");
+                alert.setTitle("Error.");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, complete todos los campos.");
                 agregarCssAlerta(alert);
@@ -89,9 +89,9 @@ public class CrearBebidaController {
             for (Producto producto : taqueria.getMenu()) {
                 if (producto.getProductName().equals(name)) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error!");
+                    alert.setTitle("Error");
                     alert.setHeaderText(null);
-                    alert.setContentText("El producto ya Existe.");
+                    alert.setContentText("El producto ya existe.");
                     agregarCssAlerta(alert);
                     alert.showAndWait();
                     return;
@@ -102,7 +102,7 @@ public class CrearBebidaController {
             taqueria.addProduct(bebida);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("AGREGADO!");
+            alert.setTitle("Agregado Exitosamente.");
             alert.setHeaderText(null);
             alert.setContentText("Bebida agregada correctamente.");
             agregarCssAlerta(alert);
@@ -110,7 +110,7 @@ public class CrearBebidaController {
 
             limpiarCampos();
 
-            System.out.println("bebida se agrafo");
+            System.out.println("Bebida se agrego.");
             for (Producto taqueria1 : taqueria.getMenu()) {
                 System.out.println(taqueria1.toString());
             }
@@ -139,17 +139,17 @@ public class CrearBebidaController {
     void initialize() {
         if (ComboBoxTipoBebida.getItems().isEmpty()) {
             ArrayList<String> typeBebida = new ArrayList<>();
-            typeBebida.add("Alcohólicas");
-            typeBebida.add("Natural");
-            typeBebida.add("Refrescos");
+            typeBebida.add("Alcohólica.");
+            typeBebida.add("Natural.");
+            typeBebida.add("Refresco.");
             ComboBoxTipoBebida.getItems().addAll(typeBebida);
         }
 
         if (ComboBoxSizeBebida.getItems().isEmpty()) {
             ArrayList<String> sizeBebida = new ArrayList<>();
-            sizeBebida.add("Chica");
-            sizeBebida.add("Mediana");
-            sizeBebida.add("Grande");
+            sizeBebida.add("Chica.");
+            sizeBebida.add("Mediana.");
+            sizeBebida.add("Grande.");
             ComboBoxSizeBebida.getItems().addAll(sizeBebida);
         }
     }

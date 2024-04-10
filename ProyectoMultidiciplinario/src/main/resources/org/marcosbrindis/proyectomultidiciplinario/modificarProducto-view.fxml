@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="422.0" prefWidth="928.0" style="-fx-background-color: #1B1B1B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.ModificarProducto">
    <children>
-      <Label layoutX="254.0" layoutY="111.0" text="Elige el tipo de Producto a Modificar:" textFill="WHITE">
+      <Label layoutX="245.0" layoutY="109.0" text="Elige el tipo de Producto a Modificar:" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="25.0" />
          </font>
       </Label>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="8.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">

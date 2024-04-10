@@ -14,15 +14,24 @@
       <TextField fx:id="TextFieldNombreTaco" layoutX="41.0" layoutY="144.0" prefHeight="48.0" prefWidth="343.0" promptText="Nombre" style="-fx-background-color: #808080; -fx-text-fill: white; -fx-border-radius: 16; -fx-background-radius: 16;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldPrecioTaco" layoutX="41.0" layoutY="219.0" prefHeight="48.0" prefWidth="343.0" promptText="Precio" style="-fx-background-color: #808080; -fx-text-fill: white; -fx-border-radius: 16; -fx-background-radius: 16;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldDescripcionTaco" layoutX="41.0" layoutY="293.0" prefHeight="48.0" prefWidth="343.0" promptText="Descripción" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <ComboBox fx:id="ComboBoxTipoCarne" layoutX="484.0" layoutY="152.0" onMouseClicked="#OnMouseClickedComboBoxTipoCarne" prefHeight="31.0" prefWidth="170.0" promptText="Tipo de Carne" style="-fx-border-color: 16; -fx-border-radius: 16; -fx-background-color: white;">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -44,9 +53,9 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ImageView fitHeight="125.0" fitWidth="125.0" layoutX="322.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="327.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/taco.png" />
+            <Image url="@img/tacox.png" />
          </image>
       </ImageView>
    </children>

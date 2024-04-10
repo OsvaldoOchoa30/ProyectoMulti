@@ -45,7 +45,7 @@ public class EliminarUsuarioController {
             MenuAdminController menuAdminController = fxmlLoader.getController();
             menuAdminController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Menu!!!.");
+            stage.setTitle("Menu.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -61,7 +61,7 @@ public class EliminarUsuarioController {
         Usuario usuarioSeleccionado = ListViewListaUsuarios.getSelectionModel().getSelectedItem();
         if (usuarioSeleccionado == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Error");
+            alert.setTitle("Error.");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, selecciona un usuario de la lista.");
             agregarCssAlerta(alert);
@@ -71,7 +71,7 @@ public class EliminarUsuarioController {
 
         if (usuarioSeleccionado.getRolUser().equals("Administrador") && contarAdministradores() == 1) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Error.");
             alert.setHeaderText(null);
             alert.setContentText("No se puede eliminar al último administrador.");
             agregarCssAlerta(alert);
@@ -81,15 +81,15 @@ public class EliminarUsuarioController {
 
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         agregarCssAlerta(confirmAlert);
-        confirmAlert.setTitle("Confirmar Eliminación");
+        confirmAlert.setTitle("Confirmar Eliminación.");
         confirmAlert.setHeaderText(null);
-        confirmAlert.setContentText("¿Seguro que quieres eliminar este Usuario?");
+        confirmAlert.setContentText("¿Seguro que desea eliminar este Usuario?");
 
         Optional<ButtonType> result = confirmAlert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             taqueria.removeUser(usuarioSeleccionado);
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-            successAlert.setTitle("Usuario Eliminado");
+            successAlert.setTitle("Usuario Eliminado.");
             successAlert.setHeaderText(null);
             successAlert.setContentText("El Usuario ha sido eliminado correctamente.");
             agregarCssAlerta(successAlert);

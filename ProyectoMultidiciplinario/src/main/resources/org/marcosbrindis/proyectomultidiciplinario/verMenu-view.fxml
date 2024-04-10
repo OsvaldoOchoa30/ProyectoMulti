@@ -16,15 +16,15 @@
         <columns>
           <TableColumn fx:id="tableColumnTacosNombre" prefWidth="213.5999755859375" text="Nombre" />
           <TableColumn fx:id="tableColumnTacosDescripcion" prefWidth="293.5999755859375" text="Descripcion" />
-            <TableColumn fx:id="tableColumnTacosCarne" prefWidth="155.199951171875" text="Carne" />
-            <TableColumn fx:id="tableColumnTacosPrecio" prefWidth="125.60009765625" text="Precio" />
+            <TableColumn fx:id="tableColumnTacosCarne" prefWidth="163.9998779296875" text="Carne" />
+            <TableColumn fx:id="tableColumnTacosPrecio" prefWidth="117.60009765625" text="Precio" />
         </columns>
       </TableView>
       <TableView fx:id="tableViewBebidas" layoutX="237.0" layoutY="462.0" prefHeight="285.0" prefWidth="785.0">
          <columns>
             <TableColumn fx:id="tableColumnBebidasNombre" prefWidth="213.5999755859375" text="Nombre" />
-            <TableColumn fx:id="tableColumnBebidasDescripcion" minWidth="0.0" prefWidth="216.7999267578125" text="Descripcion" />
-            <TableColumn fx:id="tableColumnBebidasSize" minWidth="0.0" prefWidth="115.2000732421875" text="Size" />
+            <TableColumn fx:id="tableColumnBebidasDescripcion" minWidth="0.0" prefWidth="225.59994506835938" text="Descripcion" />
+            <TableColumn fx:id="tableColumnBebidasSize" minWidth="0.0" prefWidth="107.20001220703125" text="Size" />
             <TableColumn fx:id="tableColumnBebidasTipo" prefWidth="123.99993896484375" text="Tipo" />
             <TableColumn fx:id="tableColumnBebidasPrecio" prefWidth="116.800048828125" text="Precio" />
          </columns>

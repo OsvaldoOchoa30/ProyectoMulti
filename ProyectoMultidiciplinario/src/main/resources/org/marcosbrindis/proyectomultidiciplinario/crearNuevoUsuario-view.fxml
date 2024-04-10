@@ -14,15 +14,24 @@
       <TextField fx:id="TextFieldNombreNU" layoutX="100.0" layoutY="167.0" prefHeight="48.0" prefWidth="343.0" promptText="Nombre" style="-fx-border-radius: 16; -fx-background-radius: 16; -fx-background-color: #808080; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldPasswordNU" layoutX="100.0" layoutY="227.0" prefHeight="48.0" prefWidth="343.0" promptText="Contraseña" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldPasswordCorrectaNU" layoutX="100.0" layoutY="289.0" prefHeight="48.0" prefWidth="343.0" promptText="Confirmar Contraseña" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <ImageView fitHeight="138.0" fitWidth="134.0" layoutX="210.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/nuevou.png" />

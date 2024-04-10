@@ -83,9 +83,9 @@ public class CrearTacoController {
             for (Producto producto : taqueria.getMenu()) {
                 if (producto.getProductName().equals(name)) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error!");
+                    alert.setTitle("Error.");
                     alert.setHeaderText(null);
-                    alert.setContentText("El producto ya Existe.");
+                    alert.setContentText("El producto ya existe.");
                     agregarCssAlerta(alert);
                     alert.showAndWait();
                     return;
@@ -126,7 +126,7 @@ public class CrearTacoController {
             ArrayList<String> typeMeatCombobox = new ArrayList<>();
             typeMeatCombobox.add("Res");
             typeMeatCombobox.add("Puerco");
-            typeMeatCombobox.add("pollo");
+            typeMeatCombobox.add("Pollo");
             ComboBoxTipoCarne.getItems().addAll(typeMeatCombobox);
             ComboBoxTipoCarne.setPromptText("Tipo de Carne");
         }

@@ -66,7 +66,7 @@ public class MenuAdminController {
             CocinaController cocinaController = fxmlLoader.getController();
             cocinaController.setTaqueria(taqueria);
             cocinaController.initialize();
-            callSu.setTitle("Cocina!");
+            callSu.setTitle("Cocina.");
             callSu.setScene(scene);
             callSu.show();
         } catch (IOException e) {
@@ -83,7 +83,7 @@ public class MenuAdminController {
             scene = new Scene(fxmlLoader.load());
             CrearNuevoUsuarioController crearNuevoUsuarioController = fxmlLoader.getController();
             crearNuevoUsuarioController.setTaqueria(taqueria);
-            callSu.setTitle("Crear Usuario!");
+            callSu.setTitle("Crear Usuario.");
             callSu.setScene(scene);
             callSu.show();
         } catch (IOException e) {
@@ -103,7 +103,7 @@ public class MenuAdminController {
             ModificarUsuarioController modificarUsuarioController = fxmlLoader.getController();
             modificarUsuarioController.setTaqueria(taqueria);
             modificarUsuarioController.initialize();
-            callSu.setTitle("Modificar Usuario!");
+            callSu.setTitle("Modificar Usuario.");
             callSu.setScene(scene);
             callSu.show();
         } catch (IOException e) {
@@ -122,7 +122,7 @@ public class MenuAdminController {
             EliminarUsuarioController eliminarUsuarioController = fxmlLoader.getController();
             eliminarUsuarioController.setTaqueria(taqueria);
             eliminarUsuarioController.initialize();
-            callSu.setTitle("Eliminar Usuario!");
+            callSu.setTitle("Eliminar Usuario.");
             callSu.setScene(scene);
             callSu.show();
         } catch (IOException e) {
@@ -184,7 +184,7 @@ public class MenuAdminController {
             verMenuController.setTaqueria(taqueria);
             verMenuController.initialize();
             Stage stage = new Stage();
-            stage.setTitle("Ver Menu!!!.");
+            stage.setTitle("Ver Menu.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -226,7 +226,7 @@ public class MenuAdminController {
             verPedidosController.setTaqueria(taqueria);
             verPedidosController.initialize();
             Stage stage = new Stage();
-            stage.setTitle("pedidos.");
+            stage.setTitle("Pedidos.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -266,7 +266,7 @@ public class MenuAdminController {
             LoginController loginController = fxmlLoader.getController();
             loginController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Login!.");
+            stage.setTitle("Login.");
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

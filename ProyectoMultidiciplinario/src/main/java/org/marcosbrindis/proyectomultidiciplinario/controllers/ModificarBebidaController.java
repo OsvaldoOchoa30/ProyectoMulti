@@ -81,7 +81,7 @@ public class ModificarBebidaController {
 
         if (productoSeleccionado == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Error");
+            alert.setTitle("Error.");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, selecciona una Bebida de la lista.");
             agregarCssAlerta(alert);
@@ -91,7 +91,7 @@ public class ModificarBebidaController {
 
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         agregarCssAlerta(confirmAlert);
-        confirmAlert.setTitle("Confirmar Eliminación");
+        confirmAlert.setTitle("Confirmar Eliminación.");
         confirmAlert.setHeaderText(null);
         confirmAlert.setContentText("¿Seguro que quieres eliminar esta bebida?");
 
@@ -99,7 +99,7 @@ public class ModificarBebidaController {
         if (result.isPresent() && result.get() == ButtonType.OK) {
             taqueria.removeProduct(productoSeleccionado);
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-            successAlert.setTitle("Bebida Eliminada");
+            successAlert.setTitle("Bebida Eliminada.");
             successAlert.setHeaderText(null);
             successAlert.setContentText("La Bebida ha sido eliminada correctamente.");
             agregarCssAlerta(successAlert);
@@ -114,7 +114,7 @@ public class ModificarBebidaController {
             Producto productoSeleccionado = ListViewListaBebidas.getSelectionModel().getSelectedItem();
             if (productoSeleccionado == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Error");
+                alert.setTitle("Error.");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, selecciona una Bebida de la lista.");
                 agregarCssAlerta(alert);
@@ -130,7 +130,7 @@ public class ModificarBebidaController {
 
             if (nuevoNombre.isEmpty() || nuevaDescripcion.isEmpty() || nuevoTipoBebida == null || nuevosizeBebida == null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
+                alert.setTitle("Error.");
                 alert.setHeaderText(null);
                 alert.setContentText("Por favor, complete todos los campos.");
                 agregarCssAlerta(alert);
@@ -140,7 +140,7 @@ public class ModificarBebidaController {
             for (Producto producto : taqueria.getMenu()) {
                 if (!producto.equals(productoSeleccionado) && producto.getProductName().equalsIgnoreCase(nuevoNombre)) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
+                    alert.setTitle("Error.");
                     alert.setHeaderText(null);
                     alert.setContentText("El nombre '" + nuevoNombre + "' ya está siendo utilizado por otro producto.");
                     agregarCssAlerta(alert);
@@ -153,7 +153,7 @@ public class ModificarBebidaController {
             taqueria.modifyProduct(idProductoSeleccionado, nuevoNombre, nuevaDescripcion, nuevoPrecio, null, nuevoTipoBebida, nuevosizeBebida);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Bebida Modificada");
+            alert.setTitle("Bebida Modificada.");
             alert.setHeaderText(null);
             alert.setContentText("La Bebida ha sido modificada correctamente.");
             agregarCssAlerta(alert);
@@ -167,7 +167,7 @@ public class ModificarBebidaController {
         }*/
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Error");
+            alert.setTitle("Error.");
             alert.setHeaderText(null);
             alert.setContentText("Por favor, ingrese un valor válido para el precio.");
             agregarCssAlerta(alert);
@@ -190,16 +190,16 @@ public class ModificarBebidaController {
     void initialize() {
         if (ComboBoxModificarTamaño.getItems().isEmpty()) {
             ArrayList<String> sizeBebida = new ArrayList<>();
-            sizeBebida.add("Chica");
-            sizeBebida.add("Mediana");
-            sizeBebida.add("Grande");
+            sizeBebida.add("Chica.");
+            sizeBebida.add("Mediana.");
+            sizeBebida.add("Grande.");
             ComboBoxModificarTamaño.getItems().addAll(sizeBebida);
         }
         if (ComboBoxModificarTipoBebida.getItems().isEmpty()) {
             ArrayList<String> typeBebida = new ArrayList<>();
-            typeBebida.add("Alcohólicas");
-            typeBebida.add("Natural");
-            typeBebida.add("Refrescos");
+            typeBebida.add("Alcohólica.");
+            typeBebida.add("Natural.");
+            typeBebida.add("Refresco.");
             ComboBoxModificarTipoBebida.getItems().addAll(typeBebida);
         }
 

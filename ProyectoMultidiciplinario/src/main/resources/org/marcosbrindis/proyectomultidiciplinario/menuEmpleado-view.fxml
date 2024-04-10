@@ -8,41 +8,44 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="517.0" style="-fx-background-color: #1b1b1b;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.MenuEmpleadoController">
+<AnchorPane prefHeight="534.0" prefWidth="552.0" style="-fx-background-color: #1b1b1b;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.MenuEmpleadoController">
    <children>
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#ffffff00" height="255.0" layoutX="98.0" layoutY="188.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="293.0" />
-      <Button fx:id="ButtomVerMenuEMP" layoutX="135.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerMenuEMP" prefHeight="43.0" prefWidth="220.0" style="-fx-background-radius: 16; -fx-border-radius: 16; -fx-background-color: #FFA31A;" text="Ver Menú">
+      <Rectangle arcHeight="8.0" arcWidth="8.0" fill="#292929" height="382.0" layoutX="114.0" layoutY="76.0" stroke="TRANSPARENT" strokeType="INSIDE" width="323.0" />
+      <Button fx:id="ButtomVerMenuEMP" layoutX="167.0" layoutY="256.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerMenuEMP" prefHeight="43.0" prefWidth="220.0" style="-fx-background-radius: 16; -fx-border-radius: 16; -fx-background-color: #FFA31A;" text="Ver Menú">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="ButtomCrearPedidoEMP" layoutX="135.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCrearPedidoEMP" prefHeight="43.0" prefWidth="220.0" style="-fx-background-radius: 16; -fx-border-radius: 16; -fx-background-color: #FFA31A;" text="Crear Pedido">
+      <Button fx:id="ButtomCrearPedidoEMP" layoutX="167.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedCrearPedidoEMP" prefHeight="43.0" prefWidth="220.0" style="-fx-background-radius: 16; -fx-border-radius: 16; -fx-background-color: #FFA31A;" text="Crear Pedido">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="ButtomVerPedidosEMP" layoutX="135.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerPedidosEMP" prefHeight="43.0" prefWidth="220.0" style="-fx-background-radius: 16; -fx-border-radius: 16; -fx-background-color: #FFA31A;" text="Ver Pedidos">
+      <Button fx:id="ButtomVerPedidosEMP" layoutX="167.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedVerPedidosEMP" prefHeight="43.0" prefWidth="220.0" style="-fx-background-radius: 16; -fx-border-radius: 16; -fx-background-color: #FFA31A;" text="Ver Pedidos">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="ButtonCerrarSesionEMP" layoutX="377.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtonCerrarSesionEMP" prefHeight="20.0" prefWidth="125.0" style="-fx-border-radius: 12; -fx-background-radius: 12; -fx-background-color: #808080;" text="Cerrar Sesion" textFill="WHITE">
+      <Button fx:id="ButtonCerrarSesionEMP" layoutX="378.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtonCerrarSesionEMP" prefHeight="30.0" prefWidth="142.0" style="-fx-border-radius: 12; -fx-background-radius: 12; -fx-background-color: #808080;" text="Cerrar Sesion" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font></Button>
-      <Button fx:id="ButtonCocinaEMP" layoutX="427.0" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtonCocinaEMP" prefHeight="61.0" prefWidth="76.0" text="Cocina" />
-      <ImageView fitHeight="131.0" fitWidth="126.0" layoutX="182.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="ButtonCocinaEMP" layoutX="235.0" layoutY="483.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtonCocinaEMP" prefHeight="23.0" prefWidth="80.0" style="-fx-background-radius: 16; -fx-border-radius: 16; -fx-background-color: #808080;" text="Cocina" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic UI Semibold" size="16.0" />
+         </font></Button>
+      <ImageView fitHeight="142.0" fitWidth="142.0" layoutX="208.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/perfil.png" />
+            <Image url="@img/perfilxd.png" />
          </image>
       </ImageView>
    </children>

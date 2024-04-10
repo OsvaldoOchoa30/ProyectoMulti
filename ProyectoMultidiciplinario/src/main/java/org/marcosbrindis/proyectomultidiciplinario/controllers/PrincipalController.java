@@ -61,7 +61,7 @@ public class PrincipalController {
                     Scene scene = new Scene(fxmlLoader.load());
                     LoginController loginController = fxmlLoader.getController();
                     loginController.setTaqueria(taqueria);
-                    callSu.setTitle("Iniciar Sesion!");
+                    callSu.setTitle("Iniciar Sesion.");
                     callSu.setScene(scene);
                     callSu.show();
                 } catch (IOException e) {
@@ -72,9 +72,9 @@ public class PrincipalController {
                 stage.close();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
+                alert.setTitle("Error.");
                 alert.setHeaderText(null);
-                alert.setContentText("Contraseñas NO COINCIDEN!!!.");
+                alert.setContentText("Las contraseñas no coinciden, intenta nuevamente.");
                 agregarCssAlerta(alert);
                 alert.showAndWait();
             }
@@ -82,7 +82,7 @@ public class PrincipalController {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
-            alert.setContentText("Hay campos sin llenar!!!.\n"+"Favor de llenarlos.");
+            alert.setContentText("Hay campos sin llenar.\n"+"Por favor llenalos correctamente..");
             agregarCssAlerta(alert);
             alert.showAndWait();
         }

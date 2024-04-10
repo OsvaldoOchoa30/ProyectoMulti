@@ -44,7 +44,7 @@ public class ElegirProductoController {
             MenuAdminController menuAdminController = fxmlLoader.getController();
             menuAdminController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Menu!!!");
+            stage.setTitle("Menu.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

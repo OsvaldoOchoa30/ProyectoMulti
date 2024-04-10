@@ -16,21 +16,30 @@
             <Image url="@img/flecha-circulo-izquierda.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="138.0" fitWidth="134.0" layoutX="325.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="145.0" fitWidth="145.0" layoutX="298.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/editarp.png" />
          </image>
       </ImageView>
-      <TextField fx:id="TextFieldNombreModificarUsuario" layoutX="436.0" layoutY="190.0" prefHeight="38.0" prefWidth="224.0" promptText="Usuario a Modificar" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;" />
-      <TextField fx:id="TextFieldPasswordModificarUsuario" layoutX="21.0" layoutY="270.0" prefHeight="46.0" prefWidth="343.0" promptText="Contraseña" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
+      <TextField fx:id="TextFieldNombreModificarUsuario" layoutX="441.0" layoutY="169.0" prefHeight="38.0" prefWidth="220.0" promptText="Usuario a Modificar" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <TextField fx:id="TextFieldPasswordModificarUsuario" layoutX="22.0" layoutY="249.0" prefHeight="46.0" prefWidth="343.0" promptText="Contraseña" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
-      <TextField fx:id="TextFieldConfirmarPasswordModificarUusario" layoutX="19.0" layoutY="334.0" prefHeight="46.0" prefWidth="343.0" promptText="Confirmar Contraseña" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <TextField fx:id="TextFieldConfirmarPasswordModificarUusario" layoutX="20.0" layoutY="313.0" prefHeight="46.0" prefWidth="343.0" promptText="Confirmar Contraseña" style="-fx-background-color: #808080; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
-      <Button fx:id="ButtomModificarUsuario" layoutX="20.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomModificarUsuario" prefHeight="48.0" prefWidth="343.0" style="-fx-background-color: #ffa31a; -fx-border-radius: 16; -fx-background-radius: 16;" text="Modificar">
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <Button fx:id="ButtomModificarUsuario" layoutX="21.0" layoutY="426.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomModificarUsuario" prefHeight="48.0" prefWidth="343.0" style="-fx-background-color: #ffa31a; -fx-border-radius: 16; -fx-background-radius: 16;" text="Modificar">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
@@ -42,11 +51,11 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ListView fx:id="ListViewListaUsuarios" layoutX="441.0" layoutY="241.0" prefHeight="253.0" prefWidth="274.0" style="-fx-border-color: #ffa31a; -fx-border-width: 2; -fx-border-radius: 15; -fx-background-radius: 15;">
+      <ListView fx:id="ListViewListaUsuarios" layoutX="442.0" layoutY="220.0" prefHeight="253.0" prefWidth="274.0" style="-fx-border-width: 2; -fx-border-radius: 15; -fx-background-radius: 15;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ListView>
-      <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="669.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="670.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/buscar.png" />
          </image>

@@ -9,21 +9,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="523.0" prefWidth="727.0" style="-fx-background-color: #292929; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.EliminarUsuarioController">
+<AnchorPane prefHeight="501.0" prefWidth="727.0" style="-fx-background-color: #292929; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marcosbrindis.proyectomultidiciplinario.controllers.EliminarUsuarioController">
    <children>
-      <ListView fx:id="ListViewListaUsuarios" layoutX="435.0" layoutY="183.0" prefHeight="298.0" prefWidth="277.0" style="-fx-border-color: #ffa31a; -fx-border-radius: 2; -fx-border-width: 2; -fx-background-radius: 2;">
+      <ListView fx:id="ListViewListaUsuarios" layoutX="435.0" layoutY="175.0" prefHeight="298.0" prefWidth="277.0" style="-fx-border-radius: 2; -fx-border-width: 2; -fx-background-radius: 2;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ListView>
-      <Label fx:id="LabelNombreUsuario" layoutX="16.0" layoutY="207.0" prefHeight="48.0" prefWidth="343.0" style="-fx-border-radius: 16; -fx-background-radius: 16; -fx-background-color: #808080; -fx-text-fill: white;" text="  Usuario">
+      <Label fx:id="LabelNombreUsuario" layoutX="16.0" layoutY="199.0" prefHeight="48.0" prefWidth="343.0" style="-fx-border-radius: 16; -fx-background-radius: 16; -fx-background-color: #808080; -fx-text-fill: white;" text="  Usuario">
          <font>
             <Font size="16.0" />
-         </font></Label>
-      <Label fx:id="LabelRolUsuario" layoutX="16.0" layoutY="282.0" prefHeight="48.0" prefWidth="343.0" style="-fx-border-radius: 16; -fx-background-radius: 16; -fx-background-color: #808080; -fx-text-fill: white;" text="  Rol">
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
+      <Label fx:id="LabelRolUsuario" layoutX="16.0" layoutY="274.0" prefHeight="48.0" prefWidth="343.0" style="-fx-border-radius: 16; -fx-background-radius: 16; -fx-background-color: #808080; -fx-text-fill: white;" text="  Rol">
          <font>
             <Font size="16.0" />
-         </font></Label>
-      <Button fx:id="ButtomEliminarUsuario" layoutX="16.0" layoutY="409.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomEliminarUsuario" prefHeight="48.0" prefWidth="343.0" style="-fx-background-color: #ffa31a; -fx-border-radius: 16; -fx-background-radius: 16;" text="Eliminar">
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
+      <Button fx:id="ButtomEliminarUsuario" layoutX="16.0" layoutY="401.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomEliminarUsuario" prefHeight="48.0" prefWidth="343.0" style="-fx-background-color: #ffa31a; -fx-border-radius: 16; -fx-background-radius: 16;" text="Eliminar">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />
          </font>
@@ -40,14 +46,14 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label layoutX="532.0" layoutY="153.0" text="Usuarios" textFill="WHITE">
+      <Label layoutX="532.0" layoutY="145.0" text="Usuarios" textFill="WHITE">
          <font>
             <Font name="Tahoma Bold" size="19.0" />
          </font>
       </Label>
-      <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="305.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="305.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/borrarusu.png" />
+            <Image url="@img/borraruk.png" />
          </image>
       </ImageView>
    </children>

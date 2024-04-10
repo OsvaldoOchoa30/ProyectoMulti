@@ -59,7 +59,7 @@ public class VerVentasController {
             MenuAdminController menuAdminController = fxmlLoader.getController();
             menuAdminController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Menu!!!.");
+            stage.setTitle("Menu.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -76,18 +76,18 @@ public class VerVentasController {
         if (ventaSeleccionada != null) {
             Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
             agregarCssAlerta(confirmAlert);
-            confirmAlert.setTitle("Confirmar Cancelacion");
+            confirmAlert.setTitle("Confirmar Cancelacion.");
             confirmAlert.setHeaderText(null);
-            confirmAlert.setContentText("¿Seguro que quieres Cancelar este Pedido?");
+            confirmAlert.setContentText("¿Seguro que quieres cancelar este Pedido?");
 
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 ventaSeleccionada.setStatus(false);
 
                     Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-                    successAlert.setTitle("Pedido Cancelado");
+                    successAlert.setTitle("Pedido Cancelado.");
                     successAlert.setHeaderText(null);
-                    successAlert.setContentText("El Pedido ha sido Cancelado correctamente.");
+                    successAlert.setContentText("El Pedido ha sido cancelado correctamente.");
                     agregarCssAlerta(successAlert);
                     successAlert.showAndWait();
                     tableViewVentas.refresh();

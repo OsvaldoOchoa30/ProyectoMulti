@@ -18,15 +18,24 @@
       <TextField fx:id="TextFieldName" layoutX="59.0" layoutY="194.0" prefHeight="48.0" prefWidth="343.0" promptText="Nombre" style="-fx-border-radius: 16; -fx-background-radius: 16; -fx-background-color: #808080; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldPassword" layoutX="59.0" layoutY="263.0" prefHeight="48.0" prefWidth="343.0" promptText="Contraseña" style="-fx-border-radius: 16; -fx-background-radius: 16; -fx-background-color: #808080; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <TextField fx:id="TextFieldOficialPassword" layoutX="60.0" layoutY="335.0" prefHeight="48.0" prefWidth="343.0" promptText="Confirme la Contraseña" style="-fx-border-radius: 16; -fx-background-radius: 16; -fx-background-color: #808080; -fx-text-fill: white;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
       <Button fx:id="ButtomCrear" layoutX="60.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedButtomCrear" prefHeight="48.0" prefWidth="343.0" style="-fx-background-color: #ffa31a; -fx-border-radius: 16; -fx-background-radius: 16;" text="Crear">
          <font>
             <Font name="Yu Gothic UI Semibold" size="16.0" />

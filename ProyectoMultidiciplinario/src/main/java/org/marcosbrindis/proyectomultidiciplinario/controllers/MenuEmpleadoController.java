@@ -67,7 +67,7 @@ public class MenuEmpleadoController {
             VerMenuController verMenuController = fxmlLoader.getController();
             verMenuController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Ver Menu!!!.");
+            stage.setTitle("Ver Menu.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -83,7 +83,7 @@ public class MenuEmpleadoController {
             VerPedidosController verPedidosController = fxmlLoader.getController();
             verPedidosController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("pedidos.");
+            stage.setTitle("Pedidos.");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -102,7 +102,7 @@ public class MenuEmpleadoController {
             LoginController loginController = fxmlLoader.getController();
             loginController.setTaqueria(taqueria);
             Stage stage = new Stage();
-            stage.setTitle("Login!.");
+            stage.setTitle("Login.");
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -123,7 +123,7 @@ public class MenuEmpleadoController {
             CocinaController cocinaController = fxmlLoader.getController();
             cocinaController.setTaqueria(taqueria);
             cocinaController.initialize();
-            callSu.setTitle("Cocina!");
+            callSu.setTitle("Cocina.");
             callSu.setScene(scene);
             callSu.show();
         } catch (IOException e) {
