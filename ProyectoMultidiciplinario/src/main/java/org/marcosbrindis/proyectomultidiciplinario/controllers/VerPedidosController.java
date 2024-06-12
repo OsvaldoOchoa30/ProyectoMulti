@@ -46,7 +46,7 @@ public class VerPedidosController {
     private Taqueria taqueria;
 
     @FXML
-    void OnMouseClickedButtomBackToMenuVerPedidos(MouseEvent event) {
+    void OnMouseClickedButtomBackToMenuVerPedidos(MouseEvent event) { //Regresar al menu.
         if(taqueria.getUsuarioActual().getRolUser().equals("Administrador")) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));

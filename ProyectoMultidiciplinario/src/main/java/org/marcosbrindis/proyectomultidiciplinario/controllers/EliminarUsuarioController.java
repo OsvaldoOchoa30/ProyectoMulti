@@ -59,7 +59,7 @@ public class EliminarUsuarioController {
     @FXML
     void OnMouseClickedButtomEliminarUsuario(MouseEvent event) {
         Usuario usuarioSeleccionado = ListViewListaUsuarios.getSelectionModel().getSelectedItem();
-        if (usuarioSeleccionado == null) {
+        if (usuarioSeleccionado == null) { //Si no se selecciona un usuario y se de click al boton...
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error.");
             alert.setHeaderText(null);
@@ -70,6 +70,7 @@ public class EliminarUsuarioController {
         }
 
         if (usuarioSeleccionado.getRolUser().equals("Administrador") && contarAdministradores() == 1) {
+            //no se puede eliminar al ultimo Admin.
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error.");
             alert.setHeaderText(null);
@@ -79,6 +80,7 @@ public class EliminarUsuarioController {
             return;
         }
 
+        //Alerta de Confirmacion.
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         agregarCssAlerta(confirmAlert);
         confirmAlert.setTitle("Confirmar Eliminación.");
@@ -86,8 +88,8 @@ public class EliminarUsuarioController {
         confirmAlert.setContentText("¿Seguro que desea eliminar este Usuario?");
 
         Optional<ButtonType> result = confirmAlert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            taqueria.removeUser(usuarioSeleccionado);
+        if (result.isPresent() && result.get() == ButtonType.OK) { //Si se confirmar presionando el boton...
+            taqueria.removeUser(usuarioSeleccionado); //taqueria elimina al usuario del ArrayList<Usuario>.
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Usuario Eliminado.");
             successAlert.setHeaderText(null);

@@ -35,13 +35,15 @@ public class PrincipalController {
     @FXML
     void OnMouseClickedButtomCrear(MouseEvent event) {
 
-        String name= TextFieldName.getText();
-        String password1= TextFieldOficialPassword.getText();
-        String password2=TextFieldPassword.getText();
+        String name= TextFieldName.getText(); //obtiene el nombre ingresado.
+        String password1= TextFieldOficialPassword.getText(); //obtiene password.
+        String password2=TextFieldPassword.getText(); //obtiene la verificacion de password.
         String rol="Administrador";
-        if (!name.isEmpty()&&!password1.isEmpty()) {
-            if (password2.equals(password1)) {
-                if (!verificarPassword(password1)) {
+        if (!name.isEmpty()&&!password1.isEmpty()) { //Si el contenido de nombre y password no estan vacios...
+            //Entramos a una decision de verificacion de passwords.
+            if (password2.equals(password1)) { //Si password2 es igual a password 1...
+                if (!verificarPassword(password1)) { //Entramos al metododo de Verificar password.
+                    //Si dicho metodo se vuelve false, arroja la siguiente alerta:
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");
                     alert.setHeaderText(null);
@@ -50,13 +52,14 @@ public class PrincipalController {
                     alert.showAndWait();
                     return;
                 }
-                Usuario usuario = new Usuario(name, password1, rol);
-                taqueria = new Taqueria();
-                taqueria.addUser(usuario);
-                taqueria.setUsuarioActual(usuario);
+                //Al pasar los requisitos y llenar correctamente los datos...
+                Usuario usuario = new Usuario(name, password1, rol); //Se crea un objeto de la clase Usuario con los datos asignados previamente.
+                taqueria = new Taqueria(); //Se crea un nuevo objeto de la clase taqueria.
+                taqueria.addUser(usuario); //taqueria agrega al usuario creado al ArrayList<Usuario>.
+                taqueria.setUsuarioActual(usuario); //taqueria definie al usuario actual.
 
                 //Comando para "conectar" interfaces:
-                try {
+                try { //Al agregarse el usuario exitosamente nos llevara a la siguiente interfaz.
                     FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login-view.fxml"));
                     Scene scene = new Scene(fxmlLoader.load());
                     LoginController loginController = fxmlLoader.getController();
@@ -70,7 +73,7 @@ public class PrincipalController {
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
                 stage.close();
-            } else {
+            } else { //si las password no son las mismas...
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error.");
                 alert.setHeaderText(null);
@@ -78,7 +81,7 @@ public class PrincipalController {
                 agregarCssAlerta(alert);
                 alert.showAndWait();
             }
-        }else {
+        }else { //Al estar vacios los text fields...
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -91,7 +94,9 @@ public class PrincipalController {
         this.taqueria=taqueria;
     }
 
-    public boolean verificarPassword(String contrase) {
+    public boolean verificarPassword(String contrase) { //Metodo boolean para verificar la password.
+        //la primera parte significa que debe de tener al menos un digito.
+        //la segunda parte marca que tiene que ser una password que sea igual o mayor a 6 caracteres.
         return contrase.matches(".*\\d.*") && contrase.length() >= 6;
     }
 

@@ -1,4 +1,5 @@
 package org.marcosbrindis.proyectomultidiciplinario.models;
+//Clase principal y base de datos.
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,9 +7,9 @@ import java.util.Queue;
 
 public class Taqueria {
     private Queue<Pedido>orderList;
-    private ArrayList<Usuario>userList=new ArrayList<>();
-    private ArrayList<Producto> menu = new ArrayList<>();
-    private Venta venta;
+    private ArrayList<Usuario>userList=new ArrayList<>(); //ArrayList de la clase Usuario.
+    private ArrayList<Producto> menu = new ArrayList<>(); //ArrayList de la clase Producto.
+    private Venta venta; //Instancia de venta.
     private Usuario usuarioActual;
 
     public Usuario getUsuarioActual() {

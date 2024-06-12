@@ -28,7 +28,7 @@ public class Producto {
             generated.add(digit);
         }
         StringBuilder id = new StringBuilder(prefijo);
-        for (int digit : generated) {
+        for (int digit : generated) { //Genera
             id.append(digit);
         }
         return id.toString();
@@ -84,7 +84,7 @@ public class Producto {
     public void incrementarCantidad(){
         this.quantity++;
     }
-    public void decrementarCantidad(){
+    public void decrementarCantidad(){ //Metodo Reducir cantidad.
         if (this.quantity > 1) {
             if (this.quantity > 1) {
                 this.quantity--;

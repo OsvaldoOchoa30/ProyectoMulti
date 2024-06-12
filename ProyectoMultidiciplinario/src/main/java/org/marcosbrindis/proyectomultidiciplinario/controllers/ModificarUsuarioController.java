@@ -43,7 +43,7 @@ public class ModificarUsuarioController {
     private Taqueria taqueria;
 
     @FXML
-    void OnMouseClickedButtomBacktoMenuMU(MouseEvent event) {
+    void OnMouseClickedButtomBacktoMenuMU(MouseEvent event) { //Boton para regresar al Menu Principal.
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -64,7 +64,7 @@ public class ModificarUsuarioController {
     @FXML
     void OnMouseClickedButtomModificarUsuario(MouseEvent event) {
         String nombreUsuarioSeleccionado = ListViewListaUsuarios.getSelectionModel().getSelectedItem();
-        if (nombreUsuarioSeleccionado == null) {
+        if (nombreUsuarioSeleccionado == null) { //Si no esta seleccionado ningun usuario y se da click...
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Advertencia.");
             alert.setHeaderText(null);
@@ -74,7 +74,7 @@ public class ModificarUsuarioController {
             return;
         }
 
-        Usuario usuario = null;
+        Usuario usuario = null; //!!!!!!
         for (Usuario u : taqueria.getUserList()) {
             if (u.getNameUser().equals(nombreUsuarioSeleccionado)) {
                 usuario = u;
@@ -86,10 +86,11 @@ public class ModificarUsuarioController {
             return;
         }
 
+        //Se llennan los text field
         String password1 = TextFieldPasswordModificarUsuario.getText();
         String password2 =TextFieldConfirmarPasswordModificarUusario.getText();
 
-        if (!password1.equals(password2)) {
+        if (!password1.equals(password2)) { //Si las passwords no coinciden...
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error.");
             alert.setHeaderText(null);
@@ -99,7 +100,7 @@ public class ModificarUsuarioController {
             return;
         }
 
-        if (!verificarPassword(password1)) {
+        if (!verificarPassword(password1)) { //Si la password no cumple con los requisitos...
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error.");
             alert.setHeaderText(null);
@@ -109,7 +110,7 @@ public class ModificarUsuarioController {
             return;
         }
 
-        usuario.setPassword(password1);
+        usuario.setPassword(password1); //Se modifica la password de manera correcta.
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Contraseña modificada.");

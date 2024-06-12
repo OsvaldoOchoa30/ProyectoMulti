@@ -32,17 +32,17 @@ public class LoginController {
     private HashMap<String,Usuario > clonUsuarios = new HashMap();
 
     @FXML
-    void OnMouseClickedButtomLogin(MouseEvent event) {
-        String userName= TextFieldNameLogin.getText();
-        String userPassword=TextFieldPaswordLogin.getText();
+    void OnMouseClickedButtomLogin(MouseEvent event) { //Boton para iniciar sesion.
+        String userName= TextFieldNameLogin.getText(); //text field de nombre.
+        String userPassword=TextFieldPaswordLogin.getText(); //textfield de password.
 
-        if (!clonUsuarios.isEmpty()){
+        if (!clonUsuarios.isEmpty()){ //si el hashmap no esta vacio...
             if (clonUsuarios.containsKey(userName)) {
                 Usuario usuario = clonUsuarios.get(userName);
-                if (userPassword.equals(usuario.getPassword())) {
-                    taqueria.setUsuarioActual(usuario);
+                if (userPassword.equals(usuario.getPassword())) { //Si la password es igual a la password guardada...
+                    taqueria.setUsuarioActual(usuario); //Taqueria define al usuario.
                     System.out.println("Usuario actual: " + usuario.getNameUser() + ", Rol: " + usuario.getRolUser());
-                    if (usuario.getRolUser().equals("Administrador")){
+                    if (usuario.getRolUser().equals("Administrador")){ //Si el rol asignado es Administrador, nos permite entrar a su interfaz.
                         try {
                             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
                             Scene scene = null;
@@ -58,7 +58,7 @@ public class LoginController {
                         Node source = (Node) event.getSource();
                         Stage stage = (Stage) source.getScene().getWindow();
                         stage.close();
-                    }else{
+                    }else{ //Pero si el rol es Empleado, nos manda a otra interfaz.
                         try {
                             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuEmpleado-view.fxml"));
                             Scene scene = null;
@@ -75,7 +75,7 @@ public class LoginController {
                         Stage stage = (Stage) source.getScene().getWindow();
                         stage.close();
                     }
-                }else {
+                }else { //si la password no es igual que la guardada...
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error.");
                     alert.setHeaderText(null);
@@ -83,7 +83,7 @@ public class LoginController {
                     agregarCssAlerta(alert);
                     alert.showAndWait();
                 }
-            }else {
+            }else { //Si no se encuentra el nombre de usuario...
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error.");
                 alert.setHeaderText(null);
@@ -104,6 +104,7 @@ public class LoginController {
     @FXML
     void initialize() {
     }
+
     public void agregarCssAlerta(Alert alert){
         try {
             String cssFile = getClass().getResource("/Style.css").toExternalForm();

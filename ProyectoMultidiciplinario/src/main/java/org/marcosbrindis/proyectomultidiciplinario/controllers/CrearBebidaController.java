@@ -49,7 +49,7 @@ public class CrearBebidaController {
 
 
     @FXML
-    void ButtomBackToElegirProductoBebida(MouseEvent event) {
+    void ButtomBackToElegirProductoBebida(MouseEvent event) { //Regresar interfaz al menu.
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("elegirProducto-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -69,6 +69,7 @@ public class CrearBebidaController {
 
     @FXML
     void OnMouseClickedButtomCrear(MouseEvent event) {
+        //Se rellenan los datos.
         String name = TextFieldNombreBebida.getText();
         String descrip = TextFieldDescripcionBebida.getText();
         String precioString = TextFieldPrecioBebida.getText().replace("$", "");
@@ -77,6 +78,7 @@ public class CrearBebidaController {
         try {
             Double precio = Double.parseDouble(precioString);
             if (name.isEmpty() || descrip.isEmpty() || precioString.isEmpty() || sizeBeb == null || typeBeb == null) {
+                //Si los elementos estan vacios.
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Error.");
                 alert.setHeaderText(null);
@@ -86,8 +88,8 @@ public class CrearBebidaController {
                 return;
             }
 
-            for (Producto producto : taqueria.getMenu()) {
-                if (producto.getProductName().equals(name)) {
+            for (Producto producto : taqueria.getMenu()) { //Revisa si el producto existe.
+                if (producto.getProductName().equals(name)) { //Si el nimbre ingresado coincide con un producto creado...
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");
                     alert.setHeaderText(null);
@@ -98,8 +100,8 @@ public class CrearBebidaController {
                 }
             }
 
-            Bebida bebida = new Bebida(name, descrip, precio, 1, typeBeb,sizeBeb);
-            taqueria.addProduct(bebida);
+            Bebida bebida = new Bebida(name, descrip, precio, 1, typeBeb,sizeBeb); //Se crea una instancia de la clase bebida con los datos obtenidos.
+            taqueria.addProduct(bebida); //se agrega el producto al ArrayList Menu
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Agregado Exitosamente.");
@@ -116,6 +118,7 @@ public class CrearBebidaController {
             }
 
         } catch (NumberFormatException e) {
+            //Al no ingresar datos numericos en el precio
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -137,6 +140,7 @@ public class CrearBebidaController {
 
     @FXML
     void initialize() {
+        //Inicializan los combo box
         if (ComboBoxTipoBebida.getItems().isEmpty()) {
             ArrayList<String> typeBebida = new ArrayList<>();
             typeBebida.add("Alcohólica.");

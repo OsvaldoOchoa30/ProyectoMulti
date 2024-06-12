@@ -78,7 +78,7 @@ public class ModificarBebidaController {
     @FXML
     void OnMouseClickedButtomEliminarBebida(MouseEvent event) {
         Producto productoSeleccionado = ListViewListaBebidas.getSelectionModel().getSelectedItem();
-
+        //Al no seleccionar un elemento de la tabla y dar click...
         if (productoSeleccionado == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error.");
@@ -97,6 +97,7 @@ public class ModificarBebidaController {
 
         Optional<ButtonType> result = confirmAlert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
+            //Al aceptar eliminar la bebida se remueve del ArrayList Producto
             taqueria.removeProduct(productoSeleccionado);
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Bebida Eliminada.");
@@ -111,6 +112,7 @@ public class ModificarBebidaController {
     @FXML
     void OnMouseClickedButtomModificarBebida(MouseEvent event) {
         try {
+            //Al no seleccionar un elemento de la tabla y dar click...
             Producto productoSeleccionado = ListViewListaBebidas.getSelectionModel().getSelectedItem();
             if (productoSeleccionado == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -122,6 +124,7 @@ public class ModificarBebidaController {
                 return;
             }
 
+            //Se rellenan los elementos.
             String nuevoNombre = TextFieldNameModificarBebida.getText();
             String nuevaDescripcion = TextFieldModificarDescripcionBebida.getText();
             double nuevoPrecio = Double.parseDouble(TextFieldModificarPrecioBebida.getText());
@@ -129,6 +132,7 @@ public class ModificarBebidaController {
             String nuevosizeBebida = ComboBoxModificarTamaño.getValue();
 
             if (nuevoNombre.isEmpty() || nuevaDescripcion.isEmpty() || nuevoTipoBebida == null || nuevosizeBebida == null) {
+                //Al no tener llenos todos los elementos...
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error.");
                 alert.setHeaderText(null);
@@ -138,6 +142,7 @@ public class ModificarBebidaController {
                 return;
             }
             for (Producto producto : taqueria.getMenu()) {
+                //Si el nombre a modificar ya existe...
                 if (!producto.equals(productoSeleccionado) && producto.getProductName().equalsIgnoreCase(nuevoNombre)) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error.");
@@ -150,6 +155,7 @@ public class ModificarBebidaController {
             }
             String idProductoSeleccionado = productoSeleccionado.getProductId();
 
+            //Al pasar exitosamente todos los requisitos, se modidica los datos.
             taqueria.modifyProduct(idProductoSeleccionado, nuevoNombre, nuevaDescripcion, nuevoPrecio, null, nuevoTipoBebida, nuevosizeBebida);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -165,7 +171,7 @@ public class ModificarBebidaController {
                 System.out.println(producto.toString() + " - Tipo de carne: " + ((Taco) producto).getTypeMeat());
             }
         }*/
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException e) { //Se debe ingresar datos numericos en el precio.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error.");
             alert.setHeaderText(null);

@@ -44,7 +44,7 @@ public class CrearNuevoUsuarioController {
     private Taqueria taqueria;
 
     @FXML
-    void OnMouseClickedButtomBackToMenuNU(MouseEvent event) {
+    void OnMouseClickedButtomBackToMenuNU(MouseEvent event) { //Boton para regresar al menu del Administrador.
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menuAdmin-view.fxml"));
             Scene scene = null;
@@ -64,12 +64,14 @@ public class CrearNuevoUsuarioController {
 
     @FXML
     void OnMouseClickedButtomCrearNU(MouseEvent event) {
+        //Rellenamos los datos...
         String name = TextFieldNombreNU.getText();
         String password1 = TextFieldPasswordNU.getText();
         String password2 = TextFieldPasswordCorrectaNU.getText();
         String rolUser = ComboBoxRolNU.getValue();
 
         if (name.isEmpty() || password1.isEmpty() || password2.isEmpty() || rolUser == null) {
+            //Si los espacios estan vacios...
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -79,7 +81,7 @@ public class CrearNuevoUsuarioController {
             return;
         }
 
-        if (!password1.equals(password2)) {
+        if (!password1.equals(password2)) { //Si las passwords no coinciden...
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -89,7 +91,7 @@ public class CrearNuevoUsuarioController {
             return;
         }
 
-        if (!verificarPassword(password1)) {
+        if (!verificarPassword(password1)) { //si la password no cumple los requisitos del metodo verificarPassword...
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -100,28 +102,28 @@ public class CrearNuevoUsuarioController {
         }
 
 
-        for (Usuario existingUser : taqueria.getUserList()) {
-            if (existingUser.getNameUser().equals(name)) {
+        for (Usuario existingUser : taqueria.getUserList()) { //Se busca usuarios...
+            if (existingUser.getNameUser().equals(name)) { //Si el no,bre ingresado coincide con un nombre del buscador...
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
-                alert.setContentText("El usuario ya existe.!!!");
+                alert.setContentText("El usuario ya existe.");
                 agregarCssAlerta(alert);
                 alert.showAndWait();
                 return;
             }
         }
 
-
+        //Al pasar las pruebas exitosamente se guarda la informacion proporcionada a un objeto de la clase Usuario.
         Usuario usuario = new Usuario(name, password1, rolUser);
-        taqueria.addUser(usuario);
+        taqueria.addUser(usuario); //taqueria agrega al usuario creado al ArrayList<Usuario>.
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("USUARIO CREADO");
         alert.setHeaderText(null);
         alert.setContentText("usuario creado correctamente!!!.");
         agregarCssAlerta(alert);
         alert.showAndWait();
-        limpiarCampos();
+        limpiarCampos(); //Al crearse se reinician los campos con ek metodo limpiarCampos.
     }
 
     @FXML

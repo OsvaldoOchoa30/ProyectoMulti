@@ -44,7 +44,7 @@ public class CrearTacoController {
     private Taqueria taqueria;
 
     @FXML
-    void OnMouseClickedButtomBackToElegirProductoTaco(MouseEvent event) {
+    void OnMouseClickedButtomBackToElegirProductoTaco(MouseEvent event) { //Boton para regresar al menu Elegir Producto.
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("elegirProducto-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -64,13 +64,16 @@ public class CrearTacoController {
 
     @FXML
     void OnMouseClickedButtomCrearTaco(MouseEvent event) {
+        //LLenamos los datos del textfield.
         String name = TextFieldNombreTaco.getText();
         String descrip = TextFieldDescripcionTaco.getText();
         String precioString = TextFieldPrecioTaco.getText().replace("$", "");
         String typemeat = ComboBoxTipoCarne.getValue();
+
         try {
             Double precio = Double.parseDouble(precioString);
             if (name.isEmpty() || descrip.isEmpty() || precioString.isEmpty() || typemeat == null) {
+                //Si los elementos estan vacios...
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
@@ -80,7 +83,8 @@ public class CrearTacoController {
                 return;
             }
 
-            for (Producto producto : taqueria.getMenu()) {
+            for (Producto producto : taqueria.getMenu()) { //Busca dentro del arrayList Menu.
+                //Si existe un producto con el mismo nombre...
                 if (producto.getProductName().equals(name)) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error.");
@@ -92,8 +96,9 @@ public class CrearTacoController {
                 }
             }
 
+            //Al pasar todos los requisitos se crea un objeto de la clase taco que guarda los datos asignados.
             Taco taco = new Taco(name, descrip, precio, 1, typemeat);
-            taqueria.addProduct(taco);
+            taqueria.addProduct(taco); //agregamos el Taco al ArrayList Menu.
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("AGREGADO!");
@@ -105,6 +110,7 @@ public class CrearTacoController {
             System.out.println("Taco agregado correctamente");
 
         } catch (NumberFormatException e) {
+            //Al no colocar caracteres numericos dentro del textfield precio...
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);

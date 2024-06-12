@@ -7,7 +7,7 @@ public class Usuario {
     private String password;
     private String rolUser;
 
-    public Usuario(String nameUser, String password, String rolUser) {
+    public Usuario(String nameUser, String password, String rolUser) { //Metodo constructur de la clase usuario.
         this.nameUser = nameUser;
         this.password = password;
         this.rolUser = rolUser;

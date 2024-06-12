@@ -1,5 +1,7 @@
 package org.marcosbrindis.proyectomultidiciplinario.controllers;
 
+//Menu del Administrador, se utiliza para cambiar
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -212,10 +214,6 @@ public class MenuAdminController {
 
     }
 
-    @FXML
-    void OnMouseClickedCancelarPedido(MouseEvent event) {
-
-    }
 
     @FXML
     void OnMouseClickedVerPedidos(MouseEvent event) {

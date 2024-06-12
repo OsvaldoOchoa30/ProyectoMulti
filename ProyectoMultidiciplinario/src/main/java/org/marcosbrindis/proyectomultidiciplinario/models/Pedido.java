@@ -6,15 +6,17 @@ import java.util.LinkedList;
 import java.util.UUID;
 
 public class Pedido {
+
+    //Atributos de Pedido
     private static int nextId = 1;
     private String idPedido;
     private double total;
     private LocalDate fecha;
     private LocalDateTime hora;
-
     private LinkedList<Producto> orden = new LinkedList<>();
     private Boolean status;
 
+    //Metodo Constructor
     public Pedido(double total, LinkedList<Producto> orden) {
         this.idPedido = String.format("%04d", nextId++);
         this.total = total;
@@ -41,6 +43,8 @@ public class Pedido {
         }
         return imprimir;
     }
+
+    //Getters y Setters
 
     public double getTotal() {
         return total;
@@ -90,6 +94,7 @@ public class Pedido {
         this.status = status;
     }
 
+    //Metodo To String
     @Override
     public String toString() {
         String productos = "";

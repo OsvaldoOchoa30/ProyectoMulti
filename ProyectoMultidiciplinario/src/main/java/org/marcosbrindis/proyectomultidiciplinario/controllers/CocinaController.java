@@ -32,7 +32,7 @@ public class CocinaController {
     private Taqueria taqueria;
 
     @FXML
-    void OnMouseClickedButtomBackToMenuCocina(MouseEvent event) {
+    void OnMouseClickedButtomBackToMenuCocina(MouseEvent event) { //Cerrar interfaz Cocina.
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
@@ -40,28 +40,26 @@ public class CocinaController {
 
     @FXML
     void OnMouseClickedButtomFinalizarPedido(MouseEvent event) {
-        if (taqueria != null && !taqueria.getOrderList().isEmpty()) {
-            Pedido pedidoFinalizado = taqueria.getOrderList().poll();
+        if (taqueria != null && !taqueria.getOrderList().isEmpty()) { //Si taqueria no es nula y si la lista de pedidos (orderList) de la taquería no está vacía.
+            Pedido pedidoFinalizado = taqueria.getOrderList().poll(); //Extrae el primer pedido de la lista (usando poll()), lo agrega a la lista de ventas de la taquería (Venta) y lo almacena en la variable pedidoFinalizado.
             taqueria.getVenta().agregarVenta(pedidoFinalizado);
 
-            if (!pedidoFinalizado.getStatus()) {
-                actualizarLabels();
+            if (!pedidoFinalizado.getStatus()) { //si pedido finalizado es false...
+                actualizarLabels(); //Llama al metodo actualizarLabels.
                 return;
             }
 
-            actualizarLabels();
+            actualizarLabels(); //Llama al metodo actualizarLabels.
 
             for (Pedido pedido : taqueria.getOrderList()) {
-                if (pedido.getStatus()) {
-                    actualizarLabels();
+                if (pedido.getStatus()) { //Si encuentra un pedido que aún no está finalizado...
+                    actualizarLabels(); // Metodo actualizarLabels.
                     return;
                 }
             }
 
-            /*for (Pedido pedido : taqueria.getVenta().getSalesList()) {
-                System.out.println(pedido);
-            }*/
-        } else {
+
+        } else { //Entoces marca el siguiente mensaje.
             labelListaPedidos.setText("No hay pedidos en la cola.");
             labelIdPedidos.setText("");
         }
@@ -72,14 +70,15 @@ public class CocinaController {
     void initialize() {
         actualizarLabels();
     }
-    public void actualizarLabels() {
+    public void actualizarLabels() { //Metodo para actualizar labels.
         String listaPedidos = "";
         String IdPedidos = "";
 
-        if (taqueria != null && !taqueria.getOrderList().isEmpty()) {
+        if (taqueria != null && !taqueria.getOrderList().isEmpty()) { //Si taqueria no es nula y la lista de taqueria no esta vacia...
             while (!taqueria.getOrderList().isEmpty() && !taqueria.getOrderList().peek().getStatus()) {
                 taqueria.getVenta().agregarVenta(taqueria.getOrderList().peek());
                 taqueria.getOrderList().poll();
+                //se agrega a la lista de ventas de la taquería (Venta) y se elimina de la lista de pedidos.
             }
             if (!taqueria.getOrderList().isEmpty()) {
                 Pedido peekPedido = taqueria.getOrderList().peek();
