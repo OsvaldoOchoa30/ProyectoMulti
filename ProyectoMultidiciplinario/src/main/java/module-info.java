@@ -1,6 +1,7 @@
 module org.marcosbrindis.proyectomultidiciplinario {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
     opens org.marcosbrindis.proyectomultidiciplinario.models;
     opens org.marcosbrindis.proyectomultidiciplinario to javafx.fxml;

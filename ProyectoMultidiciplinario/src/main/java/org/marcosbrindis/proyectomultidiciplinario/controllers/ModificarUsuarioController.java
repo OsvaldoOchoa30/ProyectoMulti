@@ -1,9 +1,8 @@
 package org.marcosbrindis.proyectomultidiciplinario.controllers;
 
 import java.io.IOException;
-import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.marcosbrindis.proyectomultidiciplinario.App;
+import org.marcosbrindis.proyectomultidiciplinario.models.DatabaseConnection;
 import org.marcosbrindis.proyectomultidiciplinario.models.Taqueria;
 import org.marcosbrindis.proyectomultidiciplinario.models.Usuario;
 
@@ -40,6 +40,7 @@ public class ModificarUsuarioController {
 
     @FXML
     private TextField TextFieldPasswordModificarUsuario;
+
     private Taqueria taqueria;
 
     @FXML
@@ -74,21 +75,8 @@ public class ModificarUsuarioController {
             return;
         }
 
-        Usuario usuario = null; //!!!!!!
-        for (Usuario u : taqueria.getUserList()) {
-            if (u.getNameUser().equals(nombreUsuarioSeleccionado)) {
-                usuario = u;
-            }
-        }
-
-        if (usuario == null) {
-            System.err.println("Usuario no encontrado.");
-            return;
-        }
-
-        //Se llennan los text field
         String password1 = TextFieldPasswordModificarUsuario.getText();
-        String password2 =TextFieldConfirmarPasswordModificarUusario.getText();
+        String password2 = TextFieldConfirmarPasswordModificarUusario.getText();
 
         if (!password1.equals(password2)) { //Si las passwords no coinciden...
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -100,7 +88,7 @@ public class ModificarUsuarioController {
             return;
         }
 
-        if (!verificarPassword(password1)) { //Si la password no cumple con los requisitos...
+        /*if (!verificarPassword(password1)) { //Si la password no cumple con los requisitos...
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error.");
             alert.setHeaderText(null);
@@ -108,26 +96,33 @@ public class ModificarUsuarioController {
             agregarCssAlerta(alert);
             alert.showAndWait();
             return;
+        } */
+
+        try {
+            DatabaseConnection.updateUserPassword(nombreUsuarioSeleccionado, password1);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Contraseña modificada.");
+            alert.setHeaderText(null);
+            alert.setContentText("La contraseña ha sido modificada correctamente.");
+            agregarCssAlerta(alert);
+            alert.showAndWait();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error.");
+            alert.setHeaderText(null);
+            alert.setContentText("Ocurrió un error al modificar la contraseña.");
+            agregarCssAlerta(alert);
+            alert.showAndWait();
         }
-
-        usuario.setPassword(password1); //Se modifica la password de manera correcta.
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Contraseña modificada.");
-        alert.setHeaderText(null);
-        alert.setContentText("La contraseña ha sido modificada correctamente.");
-        agregarCssAlerta(alert);
-        alert.showAndWait();
-
     }
-
 
     @FXML
     void initialize() {
-        if (taqueria != null) {
-            ArrayList<Usuario> listUsuario = taqueria.getUserList();
+        // Cargar usuarios desde la base de datos
+        try {
             ObservableList<String> nombresUsuarios = FXCollections.observableArrayList();
-            for (Usuario usuario : listUsuario) {
+            for (Usuario usuario : DatabaseConnection.getAllUsers()) {
                 nombresUsuarios.add(usuario.getNameUser());
             }
 
@@ -143,10 +138,12 @@ public class ModificarUsuarioController {
                     ListViewListaUsuarios.getSelectionModel().select(nuevoNombre);
                 }
             });
-        } else {
-            System.err.println("Taqueria no inicializada.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al cargar los usuarios desde la base de datos.");
         }
     }
+
     public void agregarCssAlerta(Alert alert){
         try {
             String cssFile = getClass().getResource("/Style.css").toExternalForm();
@@ -158,9 +155,10 @@ public class ModificarUsuarioController {
     }
 
     public void setTaqueria(Taqueria taqueria){
-        this.taqueria=taqueria;
+        this.taqueria = taqueria;
     }
+
     public boolean verificarPassword(String contrase) {
-        return contrase.matches(".*\\d.*") && contrase.length() >= 6;
+        return contrase.matches(".\\d.") && contrase.length() >= 6;
     }
 }

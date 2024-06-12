@@ -10,13 +10,13 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.marcosbrindis.proyectomultidiciplinario.App;
-import org.marcosbrindis.proyectomultidiciplinario.models.Producto;
-import org.marcosbrindis.proyectomultidiciplinario.models.Taco;
+import org.marcosbrindis.proyectomultidiciplinario.models.DatabaseConnection;
 import org.marcosbrindis.proyectomultidiciplinario.models.Taqueria;
 import org.marcosbrindis.proyectomultidiciplinario.models.Usuario;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Optional;
 
 public class EliminarUsuarioController {
@@ -35,6 +35,7 @@ public class EliminarUsuarioController {
 
     @FXML
     private ListView<Usuario> ListViewListaUsuarios;
+
     private Taqueria taqueria;
 
     @FXML
@@ -59,7 +60,7 @@ public class EliminarUsuarioController {
     @FXML
     void OnMouseClickedButtomEliminarUsuario(MouseEvent event) {
         Usuario usuarioSeleccionado = ListViewListaUsuarios.getSelectionModel().getSelectedItem();
-        if (usuarioSeleccionado == null) { //Si no se selecciona un usuario y se de click al boton...
+        if (usuarioSeleccionado == null) { // Si no se selecciona un usuario y se da click al boton...
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error.");
             alert.setHeaderText(null);
@@ -70,7 +71,7 @@ public class EliminarUsuarioController {
         }
 
         if (usuarioSeleccionado.getRolUser().equals("Administrador") && contarAdministradores() == 1) {
-            //no se puede eliminar al ultimo Admin.
+            // No se puede eliminar al último Admin.
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error.");
             alert.setHeaderText(null);
@@ -80,7 +81,7 @@ public class EliminarUsuarioController {
             return;
         }
 
-        //Alerta de Confirmacion.
+        // Alerta de Confirmación.
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         agregarCssAlerta(confirmAlert);
         confirmAlert.setTitle("Confirmar Eliminación.");
@@ -88,20 +89,31 @@ public class EliminarUsuarioController {
         confirmAlert.setContentText("¿Seguro que desea eliminar este Usuario?");
 
         Optional<ButtonType> result = confirmAlert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) { //Si se confirmar presionando el boton...
-            taqueria.removeUser(usuarioSeleccionado); //taqueria elimina al usuario del ArrayList<Usuario>.
-            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-            successAlert.setTitle("Usuario Eliminado.");
-            successAlert.setHeaderText(null);
-            successAlert.setContentText("El Usuario ha sido eliminado correctamente.");
-            agregarCssAlerta(successAlert);
-            successAlert.showAndWait();
-            actualizarListaUsuarios();
+        if (result.isPresent() && result.get() == ButtonType.OK) { // Si se confirma presionando el botón...
+            try {
+                DatabaseConnection.deleteUser(usuarioSeleccionado.getNameUser()); // Eliminar usuario de la base de datos.
+                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                successAlert.setTitle("Usuario Eliminado.");
+                successAlert.setHeaderText(null);
+                successAlert.setContentText("El Usuario ha sido eliminado correctamente.");
+                agregarCssAlerta(successAlert);
+                successAlert.showAndWait();
+                actualizarListaUsuarios();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error.");
+                alert.setHeaderText(null);
+                alert.setContentText("Ocurrió un error al eliminar el usuario.");
+                agregarCssAlerta(alert);
+                alert.showAndWait();
+            }
         }
     }
+
     public int contarAdministradores() {
         int count = 0;
-        for (Usuario usuario : taqueria.getUserList()) {
+        for (Usuario usuario : ListViewListaUsuarios.getItems()) {
             if (usuario.getRolUser().equals("Administrador")) {
                 count++;
             }
@@ -125,8 +137,8 @@ public class EliminarUsuarioController {
         });
         ListViewListaUsuarios.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                LabelNombreUsuario.setText("  "+newValue.getNameUser());
-                LabelRolUsuario.setText("  "+newValue.getRolUser());
+                LabelNombreUsuario.setText("  " + newValue.getNameUser());
+                LabelRolUsuario.setText("  " + newValue.getRolUser());
             } else {
                 LabelNombreUsuario.setText("");
                 LabelRolUsuario.setText("");
@@ -135,12 +147,17 @@ public class EliminarUsuarioController {
     }
 
     public void actualizarListaUsuarios() {
-        if (taqueria != null) {
-            ObservableList<Usuario> usuarios = FXCollections.observableArrayList(taqueria.getUserList());
-            ListViewListaUsuarios.setItems(usuarios);
+        try {
+            List<Usuario> usuarios = DatabaseConnection.getAllUsers(); // Cargar usuarios desde la base de datos.
+            ObservableList<Usuario> observableUsuarios = FXCollections.observableArrayList(usuarios);
+            ListViewListaUsuarios.setItems(observableUsuarios);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al cargar los usuarios desde la base de datos.");
         }
     }
-    public void agregarCssAlerta(Alert alert){
+
+    public void agregarCssAlerta(Alert alert) {
         try {
             String cssFile = getClass().getResource("/Style.css").toExternalForm();
             alert.getDialogPane().getStylesheets().add(cssFile);
@@ -150,7 +167,7 @@ public class EliminarUsuarioController {
         }
     }
 
-    public void setTaqueria(Taqueria taqueria){
+    public void setTaqueria(Taqueria taqueria) {
         this.taqueria = taqueria;
         actualizarListaUsuarios();
     }
